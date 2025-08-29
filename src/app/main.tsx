@@ -1,21 +1,23 @@
 import {createRoot} from 'react-dom/client'
-import './styles/index.css'
-import {Button} from "@/shared/components/ui/button.tsx";
-import {ArrowDownUp, ShoppingBasket, User} from "lucide-react";
-import {Input} from "@/shared/components/ui/input.tsx";
+import './config/index.css'
+import {ArrowDownUp} from "lucide-react";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/shared/components/ui/tabs.tsx";
 import {
     DropdownMenu,
-    DropdownMenuContent, DropdownMenuItem,
-    DropdownMenuLabel, DropdownMenuSeparator,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
     DropdownMenuTrigger
 } from "@/shared/components/ui/dropdown-menu.tsx";
+import {Header} from "@/widgets/Header/ui";
+import {RootProvider} from "@/app/providers/RootProvider.tsx";
+import {providers} from "@/app/config/providers.ts";
 
 const Root = () => {
     return (
         <>
-
-
+            <Header />
             <div className={'pt-10'}>
                 <div className="container">
                     <h1 className={'font-extrabold text-black text-4xl pb-5'}>All pizzas</h1>
@@ -77,4 +79,6 @@ const Root = () => {
     )
 }
 
-createRoot(document.getElementById('root')!).render(<Root/>)
+createRoot(document.getElementById('root')!).render(
+    <RootProvider providers={providers} app={<Root/>} />
+)
