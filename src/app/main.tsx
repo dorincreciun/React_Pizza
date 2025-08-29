@@ -3,6 +3,8 @@ import './styles/index.css'
 import {Button} from "@/shared/components/ui/button.tsx";
 import {ShoppingBasket, User} from "lucide-react";
 import {Input} from "@/shared/components/ui/input.tsx";
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/shared/components/ui/tabs.tsx";
+import {Filter} from "@/features/filter";
 
 const Root = () => {
     return (
@@ -35,6 +37,47 @@ const Root = () => {
                             <ShoppingBasket/>
                         </Button>
                     </div>
+                </div>
+            </div>
+
+            <div className={'pt-10'}>
+                <div className="container">
+                    <h1 className={'font-extrabold text-black text-4xl pb-5'}>All pizzas</h1>
+
+                    <Tabs defaultValue="all" className="w-full">
+                        <TabsList className="bg-[#FAFAFA] p-1.5 rounded-xl flex h-auto">
+                            <TabsTrigger value="all" className="py-2.5 px-6">All</TabsTrigger>
+                            <TabsTrigger value="meat" className="py-2.5 px-6">Meat</TabsTrigger>
+                            <TabsTrigger value="spicy" className="py-2.5 px-6">Spicy</TabsTrigger>
+                            <TabsTrigger value="sweet" className="py-2.5 px-6">Sweet</TabsTrigger>
+                            <TabsTrigger value="vegetarian" className="py-2.5 px-6">Vegetarian</TabsTrigger>
+                            <TabsTrigger value="chicken" className="py-2.5 px-6">Chicken</TabsTrigger>
+                        </TabsList>
+
+                        <div className={'flex items-start gap-12 pt-8'}>
+                            <Filter />
+                            <div>
+                                <TabsContent value="all">
+                                    Make changes to your account here.
+                                </TabsContent>
+                                <TabsContent value="meat">
+                                    Контент для мясных пицц.
+                                </TabsContent>
+                                <TabsContent value="spicy">
+                                    Контент для острых пицц.
+                                </TabsContent>
+                                <TabsContent value="sweet">
+                                    Контент для сладких пицц.
+                                </TabsContent>
+                                <TabsContent value="vegetarian">
+                                    Контент для вегетарианских пицц.
+                                </TabsContent>
+                                <TabsContent value="chicken">
+                                    Контент для пицц с курицей.
+                                </TabsContent>
+                            </div>
+                        </div>
+                    </Tabs>
                 </div>
             </div>
         </>
