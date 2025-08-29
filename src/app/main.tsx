@@ -1,7 +1,7 @@
 import {createRoot} from 'react-dom/client'
 import './styles/index.css'
 import {Button} from "@/shared/components/ui/button.tsx";
-import {ShoppingBasket, User} from "lucide-react";
+import {Plus, ShoppingBasket, User} from "lucide-react";
 import {Input} from "@/shared/components/ui/input.tsx";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/shared/components/ui/tabs.tsx";
 import {Filter} from "@/features/filter";
@@ -58,7 +58,34 @@ const Root = () => {
                             <Filter />
                             <div>
                                 <TabsContent value="all">
-                                    Make changes to your account here.
+
+
+                                    <div className={'w-[260px]'}>
+                                        <div className={'size-[260px] bg-[#FFF7EE] rounded-2xl overflow-hidden'}>
+
+                                        </div>
+
+                                        <div className={'py-3'}>
+                                            <div className={'text-black font-bold text-[22px]'}>Диабло</div>
+                                            <p className={'text-[#B1B1B1] font-normal text-sm leading-6'}>
+                                                Острая чоризо, острый перец халапеньо, соус барбекю, митболы, томаты, сладкий перец, красный лук, моцарелла
+                                            </p>
+                                        </div>
+
+                                        <div className={'flex items-center justify-between'}>
+                                            <div>
+                                                <span className={'text-black font-normal text-xl'}>from </span>
+                                                <span className={'text-black font-bold text-xl'}>$ 449</span>
+                                            </div>
+
+                                            <Button variant={'secondary'} className={'bg-[#FFF7EE] flex items-center gap-2 text-primary py-2.5 px-5'}>
+                                                <Plus />
+                                                Add
+                                            </Button>
+                                        </div>
+                                    </div>
+
+
                                 </TabsContent>
                                 <TabsContent value="meat">
                                     Контент для мясных пицц.
