@@ -1,7 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+body {
+    font-family: "Nunito", sans-serif;
+    font-style: normal;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
 
 @theme inline {
     --radius-sm: calc(var(--radius) - 4px);
@@ -28,41 +42,32 @@
 }
 
 :root {
-    --foreground: 20 14.3% 4.1%;
+    --foreground: hsl(20 14.3% 4.1%);
 
-    --card: 0 0% 100%;
-    --card-foreground: 20 14.3% 4.1%;
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(20 14.3% 4.1%);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 14.3% 4.1%;
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(20 14.3% 4.1%);
 
-    --primary: 22 100% 50%;
-    --primary-foreground: 60 9.1% 97.8%;
+    --primary: hsl(22 100% 50%);
+    --primary-foreground: hsl(60 9.1% 97.8%);
 
-    --secondary: 32 100% 98%;
-    --secondary-foreground: 24 9.8% 10%;
+    --secondary: hsl(32 100% 98%);
+    --secondary-foreground: hsl(24 9.8% 10%);
 
-    --muted: 60 4.8% 95.9%;
-    --muted-foreground: 25 5.3% 44.7%;
+    --muted: hsl(60 4.8% 95.9%);
+    --muted-foreground: hsl(25 5.3% 44.7%);
 
-    --accent: 60 4.8% 95.9%;
-    --accent-foreground: 24 9.8% 10%;
+    --accent: hsl(60 4.8% 95.9%);
+    --accent-foreground: hsl(24 9.8% 10%);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9.1% 97.8%;
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(60 9.1% 97.8%);
 
-    --border: 20 5.9% 90%;
-    --input: 0 0% 90%;
-    --ring: 24.6 95% 53.1%;
+    --border: hsl(20 5.9% 90%);
+    --input: hsl(0 0% 90%);
+    --ring: hsl(24.6 95% 53.1%);
     --radius: 18px;
 }
 
-@layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
-
-    body {
-        @apply bg-background text-foreground;
-    }
-}
