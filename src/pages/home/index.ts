@@ -1,1 +1,1 @@
-export { HomePage } from "./ui";
+export { homeRoutes } from "./config/routing";

@@ -1,10 +1,11 @@
-import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { RoutesProvider } from "../../app/providers/RoutesProvider.tsx";
 
 export const AppLayout = () => {
-    return (
-        <>
-
-            <ReactQueryDevtools initialIsOpen={false} />
-        </>
-    )
-}
+  return (
+    <>
+      <RoutesProvider />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </>
+  );
+};

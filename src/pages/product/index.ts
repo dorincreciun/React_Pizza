@@ -1,1 +1,1 @@
-export { ProductPage } from "./ui";
+export { productRoutes } from "./config/routes";

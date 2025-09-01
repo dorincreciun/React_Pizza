@@ -1,1 +1,1 @@
-export { CartPage } from "./ui";
+export { cartRoutes } from "./config/routing";

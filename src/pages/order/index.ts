@@ -1,1 +1,1 @@
-export { OrderPage } from "./ui";
+export { orderRoutes } from "./config/routes";
