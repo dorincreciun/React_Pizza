@@ -1,15 +1,11 @@
-import type { InputHTMLAttributes, ReactNode } from "react";
+import type { VariantProps } from "class-variance-authority";
+import type { inputVariants } from "./variants.ts";
+import type { InputHTMLAttributes } from "react";
 
-export type IconProps = {
-	children?: ReactNode;
-};
+type InputVariants = NonNullable<VariantProps<typeof inputVariants>["variant"]>;
+type InputSizes = NonNullable<VariantProps<typeof inputVariants>["size"]>;
 
-export type MessageProps = {
-	children?: ReactNode;
-};
-
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-	iconStart?: ReactNode;
-	iconEnd?: ReactNode;
-	message?: ReactNode;
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
+	variant: InputVariants;
+	size: InputSizes;
 }

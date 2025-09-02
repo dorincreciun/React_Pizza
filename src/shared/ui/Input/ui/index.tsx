@@ -1,16 +1,10 @@
-import { Message } from "./Message.tsx";
-import { Icon } from "./Icon.tsx";
+import type { FC } from "react";
 import type { InputProps } from "../model/type.ts";
+import { cn } from "../../../utils/cn.ts";
+import { inputVariants } from "../model/variants.ts";
 
-export const Input = ({ iconEnd, iconStart, message, ...rest }: InputProps) => {
-	return (
-		<div>
-			<div>
-				{iconStart && <Icon>{iconStart}</Icon>}
-				<input {...rest} />
-				{iconEnd && <Icon>{iconEnd}</Icon>}
-			</div>
-			{message && <Message>{message}</Message>}
-		</div>
-	);
+export const Input: FC<InputProps> = ({ variant, size, className, ...rest }) => {
+	const buildClass = cn(inputVariants({ variant, size }), className);
+
+	return <input className={buildClass} {...rest} />;
 };

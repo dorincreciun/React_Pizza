@@ -1,9 +1,5 @@
+import { Input } from "../../../shared/ui/Input";
+
 export const Search = () => {
-	return (
-		<input
-			type="text"
-			className={"w-full border border-gray-400"}
-			placeholder={"Поиск пиццы..."}
-		/>
-	);
+	return <Input variant={"dark"} size={"large"} placeholder={"Поиск пиццы..."} />;
 };
