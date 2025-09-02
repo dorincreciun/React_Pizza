@@ -6,8 +6,10 @@ export const Logo = () => {
 			<Link className={"absolute inset-0"} to={"/"}></Link>
 			<img src="/logo-pizza.png" alt="" />
 			<div>
-				<div className={"text-2xl font-bold tracking-[1%]"}>NEXT PIZZA</div>
-				<div className={"text-[#7B7B7B]"}>вкусней уже некуда</div>
+				<div className={"text-2xl leading-[1.625rem] font-black tracking-[1%]"}>
+					NEXT PIZZA
+				</div>
+				<div className={"leading-5 text-[#7B7B7B]"}>вкусней уже некуда</div>
 			</div>
 		</div>
 	);
