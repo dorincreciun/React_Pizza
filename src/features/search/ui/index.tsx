@@ -1,3 +1,5 @@
+import { Input } from "../../../shared/ui/Input";
+
 export const Search = () => {
-	return <input className={"w-full"} placeholder={"Поиск пиццы..."} />;
+	return <Input placeholder={"Поиск пиццы..."} variant={"secondary"} size={"large"} />;
 };
