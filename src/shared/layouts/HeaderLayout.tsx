@@ -1,5 +1,5 @@
 import { Logo } from "../ui/Logo";
-import { Search } from "../../features/search";
+import { SearchComponent } from "../../features/search";
 import { ShoppingBasket, User } from "lucide-react";
 import { Button } from "../ui/Button";
 
@@ -8,7 +8,7 @@ export const HeaderLayout = () => {
 		<header className={"border-b border-[#EDEDED] py-10"}>
 			<div className={"container flex items-center gap-10"}>
 				<Logo />
-				<Search />
+				<SearchComponent />
 
 				<div className={"flex items-center gap-4"}>
 					{/* Login button */}

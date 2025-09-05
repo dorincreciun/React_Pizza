@@ -1,11 +1,11 @@
 import { FormGroup } from "../../../shared/ui/FormGroup";
+import { Search } from "lucide-react";
 
-export const Search = () => {
+export const SearchComponent = () => {
 	return (
 		<FormGroup>
 			<FormGroup.Label>Test</FormGroup.Label>
-			<FormGroup.Input variant={"primary"} size={"base"} />
-			<FormGroup.Hint>Test</FormGroup.Hint>
+			<FormGroup.Input iconStart={<Search />} variant={"primary"} size={"base"} />
 		</FormGroup>
 	);
 };

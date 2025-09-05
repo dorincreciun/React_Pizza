@@ -1,1 +1,1 @@
-export { Search } from "./ui";
+export { SearchComponent } from "./ui";

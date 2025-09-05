@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes, Ref } from "react";
 import type { VariantProps } from "class-variance-authority";
 import type { buttonVariants } from "./variants.ts";
 
@@ -8,4 +8,5 @@ type ButtonSize = VariantProps<typeof buttonVariants>["size"];
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	variant: ButtonVariants;
 	size?: ButtonSize;
+	ref?: Ref<HTMLButtonElement>;
 };

@@ -30,8 +30,15 @@ export type HintProps = FC<{ children: ReactNode }>;
 /* ---------------------------------------------------------------------------------------------- */
 
 /* FormGroup */
+type AllowedChildren =
+	| ReactElement<LabelProps>
+	| ReactElement<InputProps>
+	| ReactElement<HintProps>;
+
 export type FormGroupProps = {
-	children: [ReactElement<LabelProps>, ReactElement<InputProps>, ReactElement<HintProps>];
+	dataError?: boolean;
+	dataSuccess?: boolean;
+	children?: AllowedChildren | AllowedChildren[];
 };
 
 /* CompoundComponent */

@@ -27,11 +27,11 @@ export const inputVariants = cva(
 				large: "h-12.5 rounded-2xl py-3.5 px-5",
 			},
 			isStartIcon: {
-				true: "",
+				true: "ps-11",
 				false: "",
 			},
 			isEndIcon: {
-				true: "",
+				true: "pe-11",
 				false: "",
 			},
 		},

@@ -8,10 +8,11 @@ export const Button: FC<ButtonProps> = ({
 	size = "default",
 	className,
 	children,
+	ref,
 	...rest
 }) => {
 	return (
-		<button className={cn(buttonVariants({ variant, size }), className)} {...rest}>
+		<button className={cn(buttonVariants({ variant, size }), className)} ref={ref} {...rest}>
 			{children}
 		</button>
 	);
