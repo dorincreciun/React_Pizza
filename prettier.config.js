@@ -7,7 +7,6 @@ export default {
 	semi: true, // adaugă punct și virgulă la final de instrucțiune
 	singleQuote: false, // ghilimele duble pentru stringuri
 	trailingComma: "es5", // virgule la final unde e valid (ex: obiecte, array-uri)
-	printWidth: 100, // linie maximă recomandată
 	plugins: ["prettier-plugin-tailwindcss"], // plugin Tailwind
 	tailwindFunctions: ["clsx", "cn"], // utile dacă folosești clsx/cn
 };

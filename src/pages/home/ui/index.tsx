@@ -1,18 +1,16 @@
 import { PageLayout } from "../../../shared/layouts/PageLayout.tsx";
-import { Dropdown } from "../../../shared/ui/Dropdown";
+import { Button } from "../../../shared/ui/Button";
 
 export const HomePage = () => {
 	return (
 		<PageLayout>
-			<Dropdown>
-				<Dropdown.Toggle>wdwd</Dropdown.Toggle>
-				<Dropdown.Body>
-					<Dropdown.Item>wd</Dropdown.Item>
-					<Dropdown.Item>wd</Dropdown.Item>
-					<Dropdown.Item>wd</Dropdown.Item>
-					<Dropdown.Item>wd</Dropdown.Item>
-				</Dropdown.Body>
-			</Dropdown>
+			<Button
+				kind={"default"}
+				status={"danger"}
+				mode={"no-icon"}
+				size={"medium"}
+				label={"Home"}
+			/>
 		</PageLayout>
 	);
 };

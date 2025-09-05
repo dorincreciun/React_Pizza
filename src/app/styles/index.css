@@ -1,7 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import "tailwindcss";
 
+:root {
+    /* Raw tokens */
+    --default: #F3F4F6;
+    --primary: #4338CA;
+    --info: #1D4ED8;
+    --success: #15803D;
+    --warning: #A16207;
+    --danger: #B91C1C;
+}
+
 @theme {
+    /* Semantic tokens */
+    --color-default: var(--default);
+    --color-primary: var(--primary);
+    --color-info: var(--info);
+    --color-success: var(--success);
+    --color-warning: var(--warning);
+    --color-danger: var(--danger);
 }
 
 body {

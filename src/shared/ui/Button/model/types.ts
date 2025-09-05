@@ -1,12 +1,49 @@
-import type { ButtonHTMLAttributes, Ref } from "react";
+import type { ButtonHTMLAttributes, ReactNode, Ref } from "react";
 import type { VariantProps } from "class-variance-authority";
 import type { buttonVariants } from "./variants.ts";
 
-type ButtonVariants = VariantProps<typeof buttonVariants>["variant"];
+type ButtonKind = VariantProps<typeof buttonVariants>["kind"];
+type ButtonStatus = VariantProps<typeof buttonVariants>["status"];
 type ButtonSize = VariantProps<typeof buttonVariants>["size"];
 
-export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-	variant: ButtonVariants;
-	size?: ButtonSize;
+export type BaseButtonProps = Omit<
+	ButtonHTMLAttributes<HTMLButtonElement>,
+	"children"
+> & {
+	kind: ButtonKind;
+	status: ButtonStatus;
+	size: ButtonSize;
+	loading?: boolean;
 	ref?: Ref<HTMLButtonElement>;
 };
+
+type ButtonNoIcon = BaseButtonProps & {
+	mode: "no-icon";
+	label: ReactNode;
+	icon?: never;
+};
+
+type ButtonPrefixIcon = BaseButtonProps & {
+	mode: "prefix";
+	icon: ReactNode;
+	label: ReactNode;
+};
+
+type ButtonSuffixIcon = BaseButtonProps & {
+	mode: "suffix";
+	icon: ReactNode;
+	label: ReactNode;
+};
+
+type ButtonIconOnly = BaseButtonProps & {
+	mode: "icon-only";
+	icon: ReactNode;
+	label?: never;
+	"aria-label": string;
+};
+
+export type ButtonProps =
+	| ButtonNoIcon
+	| ButtonPrefixIcon
+	| ButtonSuffixIcon
+	| ButtonIconOnly;

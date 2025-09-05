@@ -1,19 +1,37 @@
-import type { ButtonProps } from "../model/types.ts";
-import type { FC } from "react";
 import { cn } from "../../../utils/cn.ts";
 import { buttonVariants } from "../model/variants.ts";
+import type { FC } from "react";
+import type { ButtonProps } from "../model/types.ts";
 
 export const Button: FC<ButtonProps> = ({
-	variant = "primary",
-	size = "default",
-	className,
-	children,
+	kind,
+	status,
+	size,
+	loading,
 	ref,
+	mode,
+	icon,
+	label,
+	className,
 	...rest
 }) => {
+	const hasIcon = mode === "prefix" || mode === "suffix";
+	const isOnlyIcon = mode === "icon-only";
+
+	const buildBtnVariant = cn(
+		buttonVariants({
+			isOnlyIcon,
+			hasIcon,
+			kind,
+			status,
+			size,
+		}),
+		className
+	);
+
 	return (
-		<button className={cn(buttonVariants({ variant, size }), className)} ref={ref} {...rest}>
-			{children}
+		<button ref={ref} className={buildBtnVariant} {...rest}>
+			{label}
 		</button>
 	);
 };
