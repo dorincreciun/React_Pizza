@@ -51,7 +51,7 @@ export const buttonVariants = cva(
 			{
 				kind: "outlined",
 				status: "primary",
-				class: "bg-secondary border-primary text-primary hover:bg-primary/10",
+				class: "bg-transparent border-primary text-primary hover:bg-secondary",
 			},
 			{
 				kind: "outlined",

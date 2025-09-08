@@ -22,7 +22,7 @@ export const HeaderLayout = () => {
 				<div className={"flex items-center gap-4"}>
 					{/* Login button */}
 					<Button
-						kind={"solid"}
+						kind={"outlined"}
 						status={"primary"}
 						size={"medium"}
 						mode={"prefix"}
@@ -33,8 +33,8 @@ export const HeaderLayout = () => {
 
 					{/* Cart button */}
 					<Button
-						kind={"solid"}
-						status={"primary"}
+                        kind={"outlined"}
+                        status={"primary"}
 						size={"medium"}
 						mode={"icon-only"}
 						aria-label={"Button cart"}

@@ -1,22 +1,10 @@
 import { PageLayout } from "../../../shared/layouts/PageLayout.tsx";
-import { FormGroup } from "../../../shared/ui/FormGroup";
+import {SectionCategoryTabs} from "../../../features/category-tabs";
 
 export const HomePage = () => {
 	return (
 		<PageLayout>
-			<FormGroup>
-				<FormGroup.Label>Email</FormGroup.Label>
-				<FormGroup.Input
-					variant={"secondary"}
-					size={"medium"}
-					placeholder={"Your email"}
-				/>
-				<FormGroup.Hint>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Dolorem eligendi, exercitationem expedita hic libero
-					reiciendis ullam veniam.
-				</FormGroup.Hint>
-			</FormGroup>
+			<SectionCategoryTabs />
 
 			<div>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit.

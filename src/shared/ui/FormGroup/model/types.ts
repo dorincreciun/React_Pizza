@@ -14,7 +14,7 @@ export type LabelProps = FC<LabelHTMLAttributes<HTMLLabelElement>>;
 
 /* ---------------------------------------------------------------------------------------------- */
 /* InputIcon */
-export type InputIconProps = FC<{
+export type InputSlotProps = FC<{
 	children: ReactNode;
 	position: "left" | "right";
 }>;
@@ -24,15 +24,15 @@ type InputVariants = VariantProps<typeof inputVariants>["variant"];
 type InputSizes = VariantProps<typeof inputVariants>["size"];
 
 type InputCustomProps = {
-	iconStart?: ReactNode;
-	iconEnd?: ReactNode;
+	prefix?: ReactNode;
+	suffix?: ReactNode;
 	variant: InputVariants;
 	size: InputSizes;
 	ref?: Ref<HTMLInputElement>;
 };
 
 export type InputProps = FC<
-	InputCustomProps & Omit<InputHTMLAttributes<HTMLInputElement>, "size">
+	InputCustomProps & Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "prefix">
 >;
 
 /* ---------------------------------------------------------------------------------------------- */

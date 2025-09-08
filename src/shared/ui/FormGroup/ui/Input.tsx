@@ -1,8 +1,8 @@
-import type { InputIconProps, InputProps } from "../model/types.ts";
+import type { InputSlotProps, InputProps } from "../model/types.ts";
 import { cn } from "../../../utils/cn.ts";
 import { inputVariants } from "../model/variants.ts";
 
-const InputIcon: InputIconProps = ({ children, position }) => {
+const InputSlot: InputSlotProps = ({ children, position }) => {
 	const positionDirection = position === "left" ? "left-3" : "right-3";
 	return (
 		<div
@@ -17,21 +17,21 @@ const InputIcon: InputIconProps = ({ children, position }) => {
 };
 
 export const Input: InputProps = ({
-	iconStart,
-	iconEnd,
+	prefix,
+	suffix,
 	variant,
 	size,
 	className,
 	...rest
 }) => {
 	/* Convert to boolean */
-	const isStartIcon: boolean = Boolean(iconStart);
-	const isEndIcon: boolean = Boolean(iconEnd);
+	const isStartIcon: boolean = Boolean(prefix);
+	const isEndIcon: boolean = Boolean(suffix);
 
 	return (
 		<div className={"relative"}>
 			{/* Icon Start */}
-			{iconStart && <InputIcon position={"left"}>{iconStart}</InputIcon>}
+			{prefix && <InputSlot position={"left"}>{prefix}</InputSlot>}
 
 			{/* Input Field */}
 			<input
@@ -43,7 +43,7 @@ export const Input: InputProps = ({
 			/>
 
 			{/* Icon End */}
-			{iconEnd && <InputIcon position={"right"}>{iconEnd}</InputIcon>}
+			{suffix && <InputSlot position={"right"}>{suffix}</InputSlot>}
 		</div>
 	);
 };
