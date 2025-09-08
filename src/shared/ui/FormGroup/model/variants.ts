@@ -2,29 +2,22 @@ import { cva } from "class-variance-authority";
 
 export const inputVariants = cva(
 	[
-		// Layout
-		"flex w-full",
-
-		// Text & placeholder
-		"text-base",
-		"placeholder:text-[#C0C0C0]",
-
-		// Focus & ring
-		"ring-offset-background",
-		"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F95005] focus-visible:ring-offset-2",
-
-		// Disabled
-		"disabled:cursor-not-allowed disabled:opacity-50",
+		"w-full block text-base",
+		"transition-all duration-200 ease-in-out",
+		"outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2",
+		"disabled:opacity-50 disabled:cursor-not-allowed disabled:active:translate-y-0",
+		"placeholder:text-muted",
 	],
 	{
 		variants: {
 			variant: {
-				primary: "bg-[#F9F9F9]",
-				secondary: "bg-transparent border border-[#E6E6E6]",
+				primary: "bg-surface",
+				secondary: "bg-transparent border border-neutral",
 			},
 			size: {
-				base: "rounded-[10px] py-3 px-4.5",
-				large: "h-12.5 rounded-2xl py-3.5 px-5",
+				small: "py-2 px-3 rounded-lg",
+				medium: "py-3 px-3.5 rounded-xl",
+				large: "py-3 px-4 rounded-2xl",
 			},
 			isStartIcon: {
 				true: "ps-11",
@@ -37,7 +30,7 @@ export const inputVariants = cva(
 		},
 		defaultVariants: {
 			variant: "primary",
-			size: "large",
+			size: "medium",
 		},
 	}
 );

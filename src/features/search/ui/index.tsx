@@ -5,7 +5,12 @@ export const SearchComponent = () => {
 	return (
 		<FormGroup>
 			<FormGroup.Label>Test</FormGroup.Label>
-			<FormGroup.Input iconStart={<Search />} variant={"primary"} size={"base"} />
+			<FormGroup.Input
+				iconStart={<Search />}
+				variant={"secondary"}
+				size={"medium"}
+				placeholder={"Поиск пиццы..."}
+			/>
 		</FormGroup>
 	);
 };

@@ -2,18 +2,12 @@ import { cva } from "class-variance-authority";
 
 export const buttonVariants = cva(
 	[
-		// Layout & base
 		"inline-flex items-center justify-center select-none align-middle",
 		"font-medium cursor-pointer",
-		// Motion
 		"transition-all duration-200 ease-in-out active:translate-y-0.5",
-		// Focus ring (a11y)
 		"outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2",
-		// Disabled (va fi activat via varianta `disabled`)
 		"disabled:opacity-50 disabled:cursor-not-allowed disabled:active:translate-y-0",
-		// Loading (opțional prin varianta `loading`)
 		"data-[loading=true]:pointer-events-none data-[loading=true]:opacity-70",
-		// Rounded generice (completate de size)
 	],
 	{
 		variants: {
