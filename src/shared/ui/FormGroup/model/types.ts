@@ -49,8 +49,7 @@ type AllowedChildren =
 	| ReactElement<HintProps>;
 
 export type FormGroupProps = {
-	dataError?: boolean;
-	dataSuccess?: boolean;
+	dataStatus?: "error" | "success";
 	className?: string;
 	children?: AllowedChildren | AllowedChildren[];
 };

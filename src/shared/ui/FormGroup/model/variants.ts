@@ -6,7 +6,10 @@ export const inputVariants = cva(
 		"transition-all duration-200 ease-in-out",
 		"outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2",
 		"disabled:opacity-50 disabled:cursor-not-allowed disabled:active:translate-y-0",
+		// semantic state styles (prin group)
 		"placeholder:text-muted",
+		"group-data-[status=error]:border-danger",
+		"group-data-[status=success]:border-success",
 	],
 	{
 		variants: {

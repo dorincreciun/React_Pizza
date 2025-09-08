@@ -5,25 +5,14 @@ import { Hint } from "./Hint.tsx";
 import { cn } from "../../../utils/cn.ts";
 
 export const FormGroup: CompoundComponentElements = ({
-	dataError,
-	dataSuccess,
+	dataStatus,
 	className,
 	children,
 }) => {
 	return (
 		<div
-			data-error={dataError}
-			data-success={dataSuccess}
-			className={cn(
-				[
-					/* Group */
-					"group",
-
-					/* Default */
-					"flex w-full flex-col gap-2",
-				],
-				className
-			)}
+			{...(dataStatus ? { "data-status": dataStatus } : {})}
+			className={cn(["group", "flex w-full flex-col gap-2"], className)}
 		>
 			{children}
 		</div>

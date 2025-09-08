@@ -2,10 +2,16 @@ import { Button } from "../ui/Button";
 import { Logo } from "../ui/Logo";
 import { SearchComponent } from "../../features/search";
 import { ShoppingCart, User } from "lucide-react";
+import { cn } from "../utils/cn.ts";
 
 export const HeaderLayout = () => {
 	return (
-		<header className={"border-b border-[#EDEDED] py-10"}>
+		<header
+			className={cn(
+				"sticky top-0 z-10 py-10",
+				"border-b border-[#EDEDED] bg-white"
+			)}
+		>
 			<div className={"container flex items-center gap-10"}>
 				{/* Logo */}
 				<Logo />
