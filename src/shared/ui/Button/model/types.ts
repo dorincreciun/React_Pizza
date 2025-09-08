@@ -18,21 +18,21 @@ export type BaseButtonProps = Omit<
 };
 
 type ButtonNoIcon = BaseButtonProps & {
-	mode: "no-icon";
-	label: ReactNode;
+	mode: "text-only";
+	label: string;
 	icon?: never;
 };
 
 type ButtonPrefixIcon = BaseButtonProps & {
 	mode: "prefix";
 	icon: ReactNode;
-	label: ReactNode;
+	label: string;
 };
 
 type ButtonSuffixIcon = BaseButtonProps & {
 	mode: "suffix";
 	icon: ReactNode;
-	label: ReactNode;
+	label: string;
 };
 
 type ButtonIconOnly = BaseButtonProps & {

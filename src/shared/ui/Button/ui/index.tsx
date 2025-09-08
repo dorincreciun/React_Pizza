@@ -18,7 +18,7 @@ export const Button: FC<ButtonProps> = ({
 	const hasIcon = mode === "prefix" || mode === "suffix";
 	const isOnlyIcon = mode === "icon-only";
 
-	const buildBtnVariant = cn(
+	const classes = cn(
 		buttonVariants({
 			isOnlyIcon,
 			hasIcon,
@@ -30,8 +30,10 @@ export const Button: FC<ButtonProps> = ({
 	);
 
 	return (
-		<button ref={ref} className={buildBtnVariant} {...rest}>
-			{label}
+		<button ref={ref} data-loading={loading} className={classes} {...rest}>
+			{mode === "prefix" && icon}
+			{isOnlyIcon ? icon : label}
+			{mode === "suffix" && icon}
 		</button>
 	);
 };
