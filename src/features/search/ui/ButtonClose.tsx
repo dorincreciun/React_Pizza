@@ -1,9 +1,29 @@
 import {X} from "lucide-react";
-import type {FC} from "react";
+import {type FC, useEffect} from "react";
 import type {ButtonCloseProps} from "../model/types.ts";
 import {cn} from "../../../shared/utils/cn.ts";
 
 export const ButtonClose: FC<ButtonCloseProps> = ({onClick, isOpened}) => {
+
+    useEffect(() => {
+        document.body.style.overflow = isOpened ? "hidden" : "auto";
+
+        const handleKeyPress = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                onClick();
+            }
+        };
+
+        if (isOpened) {
+            window.addEventListener("keydown", handleKeyPress);
+        }
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyPress);
+            document.body.style.overflow = "auto";
+        };
+    }, [isOpened, onClick]);
+
     return (
         <button
             onClick={onClick}
