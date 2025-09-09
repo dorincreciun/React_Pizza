@@ -1,49 +1,40 @@
-import type { ButtonHTMLAttributes, ReactNode, Ref } from "react";
+import type { ButtonHTMLAttributes, ReactElement, ReactNode } from "react";
 import type { VariantProps } from "class-variance-authority";
-import type { buttonVariants } from "./variants.ts";
+import type { buttonVariants } from "./variants";
 
-type ButtonKind = VariantProps<typeof buttonVariants>["kind"];
-type ButtonStatus = VariantProps<typeof buttonVariants>["status"];
-type ButtonSize = VariantProps<typeof buttonVariants>["size"];
+export type ButtonSize = NonNullable<
+	VariantProps<typeof buttonVariants>["size"]
+>;
+export type ButtonKind = NonNullable<
+	VariantProps<typeof buttonVariants>["kind"]
+>;
+export type ButtonColor = NonNullable<
+	VariantProps<typeof buttonVariants>["color"]
+>;
 
-export type BaseButtonProps = Omit<
+type NativeButtonProps = Omit<
 	ButtonHTMLAttributes<HTMLButtonElement>,
-	"children"
-> & {
-	kind: ButtonKind;
-	status: ButtonStatus;
-	size: ButtonSize;
+	"children" | "color"
+>;
+
+type CommonProps = NativeButtonProps & {
+	size?: ButtonSize;
+	kind?: ButtonKind;
+	color?: ButtonColor;
 	loading?: boolean;
-	ref?: Ref<HTMLButtonElement>;
+	className?: string;
 };
 
-type ButtonNoIcon = BaseButtonProps & {
-	mode: "text-only";
-	label: string;
-	icon?: never;
+export type IconOnlyProps = CommonProps & {
+	isOnlyIcon: true;
+	["aria-label"]: string;
+	children: ReactElement;
 };
 
-type ButtonPrefixIcon = BaseButtonProps & {
-	mode: "prefix";
-	icon: ReactNode;
-	label: string;
+export type WithContentProps = CommonProps & {
+	isOnlyIcon?: false | undefined;
+	children: ReactNode;
+	["aria-label"]?: string;
 };
 
-type ButtonSuffixIcon = BaseButtonProps & {
-	mode: "suffix";
-	icon: ReactNode;
-	label: string;
-};
-
-type ButtonIconOnly = BaseButtonProps & {
-	mode: "icon-only";
-	icon: ReactNode;
-	label?: never;
-	"aria-label": string;
-};
-
-export type ButtonProps =
-	| ButtonNoIcon
-	| ButtonPrefixIcon
-	| ButtonSuffixIcon
-	| ButtonIconOnly;
+export type ButtonProps = IconOnlyProps | WithContentProps;

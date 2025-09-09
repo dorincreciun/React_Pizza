@@ -8,6 +8,9 @@ export const buttonVariants = cva(
 		"outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2",
 		"disabled:opacity-50 disabled:cursor-not-allowed disabled:active:translate-y-0",
 		"data-[loading=true]:pointer-events-none data-[loading=true]:opacity-70",
+		"data-[loading=true]:pointer-events-none data-[loading=true]:opacity-70",
+		"aria-busy:true:pointer-events-none aria-busy:true:opacity-70",
+		"aria-busy:true:cursor-wait",
 	],
 	{
 		variants: {
@@ -15,19 +18,16 @@ export const buttonVariants = cva(
 				solid: "",
 				outlined: "border",
 			},
-			status: {
+			color: {
 				primary: "bg-primary text-white hover:bg-primary/90",
 				secondary: "bg-secondary text-primary hover:bg-primary/20",
 			},
 			size: {
-				small: "h-9 text-sm leading-5 rounded-lg",
-				medium: "h-10 text-base leading-6 rounded-xl",
-				large: "h-11 text-lg leading-7 rounded-2xl",
+				small: "h-10 text-sm leading-5 rounded-lg",
+				medium: "h-11 text-base leading-6 rounded-xl",
+				large: "h-12.5 text-lg leading-7 rounded-2xl",
 			},
-			hasIcon: {
-				true: "flex",
-				false: "",
-			},
+
 			isOnlyIcon: {
 				true: "px-0 aspect-square",
 				false: "",
@@ -35,14 +35,9 @@ export const buttonVariants = cva(
 		},
 
 		compoundVariants: [
-			{ size: "small", hasIcon: true, isOnlyIcon: false, class: "gap-2" },
-			{
-				size: "medium",
-				hasIcon: true,
-				isOnlyIcon: false,
-				class: "gap-2.5",
-			},
-			{ size: "large", hasIcon: true, isOnlyIcon: false, class: "gap-3" },
+			{ size: "small", isOnlyIcon: false, class: "gap-2" },
+			{ size: "medium", isOnlyIcon: false, class: "gap-2.5" },
+			{ size: "large", isOnlyIcon: false, class: "gap-3" },
 
 			{ size: "small", isOnlyIcon: false, class: "px-3" },
 			{ size: "medium", isOnlyIcon: false, class: "px-3.5" },
@@ -50,21 +45,20 @@ export const buttonVariants = cva(
 
 			{
 				kind: "outlined",
-				status: "primary",
+				color: "primary",
 				class: "bg-transparent border-primary text-primary hover:bg-secondary",
 			},
 			{
 				kind: "outlined",
-				status: "secondary",
+				color: "secondary",
 				class: "bg-white border-neutral text-muted hover:bg-neutral",
 			},
 		],
 
 		defaultVariants: {
 			kind: "solid",
-			status: "primary",
+			color: "primary",
 			size: "medium",
-			hasIcon: false,
 			isOnlyIcon: false,
 		},
 	}

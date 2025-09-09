@@ -1,8 +1,8 @@
-import { Button } from "../ui/Button";
 import { Logo } from "../ui/Logo";
 import { SearchComponent } from "../../features/search";
 import { ShoppingCart, User } from "lucide-react";
 import { cn } from "../utils/cn.ts";
+import { Button } from "../ui/Button";
 
 export const HeaderLayout = () => {
 	return (
@@ -20,27 +20,18 @@ export const HeaderLayout = () => {
 				<SearchComponent />
 
 				<div className={"flex items-center gap-4"}>
-					{/* Login button */}
+					<Button size={"large"} kind={"outlined"}>
+						<User />
+						Войти
+					</Button>
 					<Button
+						isOnlyIcon
+						size={"large"}
 						kind={"outlined"}
-						status={"primary"}
-						size={"medium"}
-						mode={"prefix"}
-						label={"Войти"}
-						icon={<User />}
-						className={"h-12.5"}
-					/>
-
-					{/* Cart button */}
-					<Button
-                        kind={"outlined"}
-                        status={"primary"}
-						size={"medium"}
-						mode={"icon-only"}
 						aria-label={"Button cart"}
-						icon={<ShoppingCart />}
-						className={"h-12.5"}
-					/>
+					>
+						<ShoppingCart />
+					</Button>
 				</div>
 			</div>
 		</header>

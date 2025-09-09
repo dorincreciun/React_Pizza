@@ -1,5 +1,3 @@
-import type { ReactNode } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 
-export type PageLayoutProps = {
-  children?: ReactNode;
-};
+export type PageLayoutProps = ComponentPropsWithoutRef<"main">;
