@@ -1,8 +1,10 @@
 import { PageLayout } from "../../../shared/layouts/PageLayout.tsx";
 import { Button } from "../../../shared/ui/Button";
 import { MoveLeft } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export const NotFoundPage = () => {
+	let navigate = useNavigate();
 	return (
 		<PageLayout className="container flex items-center justify-center">
 			<div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
@@ -17,7 +19,11 @@ export const NotFoundPage = () => {
 						</p>
 					</div>
 					<div className="flex items-center gap-5">
-						<Button color="primary" kind="outlined">
+						<Button
+							color="primary"
+							kind="outlined"
+							onClick={() => navigate("/")}
+						>
 							<MoveLeft />
 							На главную
 						</Button>
