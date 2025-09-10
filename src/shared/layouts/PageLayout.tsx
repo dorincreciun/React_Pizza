@@ -7,7 +7,7 @@ export const PageLayout = ({
 	...rest
 }: PageLayoutProps) => {
 	return (
-		<main className={cn(className)} {...rest}>
+		<main className={cn("flex-auto", className)} {...rest}>
 			{children}
 		</main>
 	);

@@ -20,9 +20,13 @@ export const HeaderLayout = () => {
 				<SearchComponent />
 
 				<div className={"flex items-center gap-4"}>
-					<Button size={"large"} kind={"outlined"}>
+					<Button
+						size={"large"}
+						kind={"outlined"}
+						className={"max-md:aspect-square max-md:p-0"}
+					>
 						<User />
-						Войти
+						<span className={"max-md:hidden"}>Войти</span>
 					</Button>
 					<Button
 						isOnlyIcon

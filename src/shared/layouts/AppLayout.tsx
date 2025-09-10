@@ -5,8 +5,10 @@ import { HeaderLayout } from "./HeaderLayout.tsx";
 export const AppLayout = () => {
 	return (
 		<>
-			<HeaderLayout />
-			<RoutesProvider />
+			<div className={"flex min-h-screen flex-col"}>
+				<HeaderLayout />
+				<RoutesProvider />
+			</div>
 			<ReactQueryDevtools initialIsOpen={false} />
 		</>
 	);
