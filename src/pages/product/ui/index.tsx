@@ -1,7 +1,7 @@
 import { PageLayout } from "../../../shared/layouts/PageLayout.tsx";
 import { Breadcrumbs } from "../../../widgets/breadcrumbs";
 import { Button } from "../../../shared/ui/Button";
-import { SelectSize } from "../../../features/product/select-size";
+import { SizeSelector } from "../../../features/product/select-size";
 import { SelectDough } from "../../../features/product/select-dough";
 import { SelectAddons } from "../../../features/product/select-addons";
 import { useParams } from "react-router";
@@ -43,7 +43,7 @@ export const ProductPage = () => {
 						{/* Category select */}
 						<div className={"flex flex-col gap-5 py-6"}>
 							{/* Select 1 */}
-							<SelectSize />
+							<SizeSelector />
 
 							{/* Select 2 */}
 							<SelectDough />

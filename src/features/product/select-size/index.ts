@@ -1,1 +1,1 @@
-export { SelectSize } from "./ui";
+export { SizeSelector } from "./ui";
