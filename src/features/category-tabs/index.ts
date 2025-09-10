@@ -1,1 +1,0 @@
-export {SectionCategoryTabs} from './ui'

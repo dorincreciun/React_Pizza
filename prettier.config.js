@@ -3,6 +3,7 @@
 /** @type {import('prettier').Config & import('prettier-plugin-tailwindcss').PluginOptions} */
 export default {
 	useTabs: true, // folosește taburi în loc de spații
+	maxWidth: 120,
 	tabWidth: 4, // lățimea unui tab (vizual) este de 2 spații
 	semi: true, // adaugă punct și virgulă la final de instrucțiune
 	singleQuote: false, // ghilimele duble pentru stringuri
