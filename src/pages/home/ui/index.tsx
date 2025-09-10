@@ -1,8 +1,10 @@
 import { PageLayout } from "../../../shared/layouts/PageLayout.tsx";
+import { Breadcrumbs } from "../../../widgets/breadcrumbs";
 
 export const HomePage = () => {
 	return (
-		<PageLayout>
+		<PageLayout className={"container"}>
+			<Breadcrumbs />
 			<div>
 				<div>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit.

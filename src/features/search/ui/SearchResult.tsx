@@ -1,17 +1,16 @@
-import {cn} from "../../../shared/utils/cn.ts";
+import { cn } from "../../../shared/utils/cn.ts";
 
 export const SearchResult = () => {
-    return (
-        <div
-            className={cn(
-                "fixed inset-0 z-0",
-                "bg-gray-800/60",
-                "will-change-[opacity,filter]",
-                "[animation:fade-blur-in_.45s_cubic-bezier(0.16,1,0.3,1)_both]"
-            )}
-        >
-            w
-        </div>
-    )
-}
-
+	return (
+		<div
+			className={cn(
+				"fixed inset-0 z-0",
+				"bg-black/60",
+				"will-change-[opacity,filter]",
+				"[animation:fade-blur-in_.45s_cubic-bezier(0.16,1,0.3,1)_both]"
+			)}
+		>
+			w
+		</div>
+	);
+};
