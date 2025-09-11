@@ -3,7 +3,7 @@ import { SizeSelector } from "@/features/product/select-size";
 import { SelectDough } from "@/features/product/select-dough";
 import { type Addon, SelectAddons } from "@/features/product/select-addons";
 import { Button } from "@/shared/ui/Button";
-import type { ProductDescriptionProps } from "@/widgets/product-description/model/types.ts";
+import { useParams } from "react-router";
 
 const addons = [
 	{
@@ -32,29 +32,28 @@ const addons = [
 	},
 ];
 
+const selectorSize = ["Маленькая", "Средняя", "Большая"];
+const selectorDough = ["Традиционное", "Тонкое"];
+
 const handleAddonChange = (addon: Addon) => {
 	console.log(addon);
 };
 
-export const ProductDescription = ({
-	imageSrc,
-	imageAlt,
-	title,
-	description,
-	selectorSize,
-	selectorDough,
-}: ProductDescriptionProps) => {
+export const ProductDescription = () => {
+	const { slug } = useParams<{ slug: string }>();
+	console.log(slug);
+
 	return (
 		<div className={"grid grid-cols-11 items-stretch gap-11.5"}>
 			<div className="col-span-5 flex flex-auto items-center justify-center rounded-2xl bg-[#FFF7EE]">
-				<ProductMedia src={imageSrc} alt={imageAlt} />
+				<ProductMedia src={"/pizza.png"} alt={"pizza"} />
 			</div>
 
 			<div className={"col-span-6"}>
 				<ProductInfo>
-					<ProductInfo.Title>{title}</ProductInfo.Title>
+					<ProductInfo.Title>Test pizza</ProductInfo.Title>
 					<ProductInfo.Description>
-						{description}
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					</ProductInfo.Description>
 				</ProductInfo>
 
@@ -64,7 +63,12 @@ export const ProductDescription = ({
 				</div>
 
 				{/* Ingredients */}
-				<SelectAddons addons={addons} onChange={handleAddonChange} />
+				{addons && (
+					<SelectAddons
+						addons={addons}
+						onChange={handleAddonChange}
+					/>
+				)}
 
 				<Button size={"large"}>Добавить в корзину за 799₽</Button>
 			</div>
