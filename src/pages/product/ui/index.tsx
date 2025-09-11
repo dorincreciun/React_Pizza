@@ -5,6 +5,7 @@ import { SizeSelector } from "@/features/product/select-size";
 import { SelectDough } from "@/features/product/select-dough";
 import { type Addon, SelectAddons } from "@/features/product/select-addons";
 import { useParams } from "react-router";
+import { ProductInfo, ProductMedia } from "@/entities/product";
 
 const addons = [
 	{
@@ -60,33 +61,20 @@ export const ProductPage = () => {
 			<Breadcrumbs />
 
 			<div className={"pt-10"}>
-				{/* Section Product */}
-
 				<div className={"grid grid-cols-11 items-stretch gap-11.5"}>
 					<div className="col-span-5 flex flex-auto items-center justify-center rounded-2xl bg-[#FFF7EE]">
-						<img
-							src="/pizza.png"
-							alt="Pizza"
-							className="h-full w-full rounded-2xl object-contain"
-						/>
+						<ProductMedia src={"/pizza.png"} alt={"test pizza"} />
 					</div>
 
 					<div className={"col-span-6"}>
-						{/* Title / Description */}
-						<div className={"flex flex-col gap-3.5"}>
-							<h1
-								className={
-									"text-[32px] leading-5 font-extrabold tracking-[-0.5px]"
+						<ProductInfo>
+							<ProductInfo.Title title={"Пепперони фреш"} />
+							<ProductInfo.Description
+								description={
+									"25 см, традиционное тесто 25, 380 г"
 								}
-							>
-								Пепперони фреш
-							</h1>
-							<span
-								className={"text-sm font-normal text-[#373737]"}
-							>
-								25 см, традиционное тесто 25, 380 г
-							</span>
-						</div>
+							/>
+						</ProductInfo>
 
 						<div className={"flex flex-col gap-5 py-6"}>
 							<SizeSelector />
