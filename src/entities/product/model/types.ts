@@ -1,14 +1,14 @@
 /* ------------------------ ProductInfo ------------------------------------- */
 /* Title */
-import type { FC, ReactElement } from "react";
+import type { FC, ReactElement, ReactNode } from "react";
 
 export type TitleProps = {
-	title: string;
+	children?: ReactNode;
 };
 
 /* Description */
 export type DescriptionProps = {
-	description: string;
+	children?: ReactNode;
 };
 
 /* ProductInfo */
@@ -22,8 +22,8 @@ export type CompoundComponentProps = FC<ProductInfoProps> & {
 	Description: FC<DescriptionProps>;
 };
 
-/* ------------------------ Index ------------------------------------ */
-/* Index */
+/* -------------------------- MediaProps ------------------------------------ */
+/* MediaProps */
 export type MediaProps = {
 	src: string;
 	alt: string;
