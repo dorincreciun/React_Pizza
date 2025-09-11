@@ -1,5 +1,5 @@
 import { Logo } from "../ui/Logo";
-import { SearchComponent } from "../../features/search";
+import { SearchComponent } from "@/features/search";
 import { ShoppingCart, User } from "lucide-react";
 import { cn } from "../utils/cn.ts";
 import { Button } from "../ui/Button";

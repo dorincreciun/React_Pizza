@@ -1,12 +1,11 @@
-import { PageLayout } from "../../../shared/layouts/PageLayout.tsx";
-import { Breadcrumbs } from "../../../widgets/breadcrumbs";
-import { Button } from "../../../shared/ui/Button";
-import { SizeSelector } from "../../../features/product/select-size";
-import { SelectDough } from "../../../features/product/select-dough";
-import { SelectAddons } from "../../../features/product/select-addons";
+import { PageLayout } from "@/shared/layouts/PageLayout.tsx";
+import { Breadcrumbs } from "@/widgets/breadcrumbs";
+import { Button } from "@/shared/ui/Button";
+import { SizeSelector } from "@/features/product/select-size";
+import { SelectDough } from "@/features/product/select-dough";
+import { type Addon, SelectAddons } from "@/features/product/select-addons";
 import { useParams } from "react-router";
-import { cn } from "../../../shared/utils/cn.ts";
-import type { Addon } from "../../../features/product/select-addons/model/type.ts";
+import { cn } from "@/shared/utils/cn.ts";
 
 const addons = [
 	{
@@ -40,7 +39,7 @@ export const ProductPage = () => {
 	console.log(slug);
 
 	const handleAddonChange = (addon: Addon) => {
-		console.log("Ai selectat addon:", addon);
+		console.log(addon);
 	};
 
 	return (

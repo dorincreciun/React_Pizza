@@ -1,4 +1,4 @@
-import { FormGroup } from "../../../shared/ui/FormGroup";
+import { FormGroup } from "@/shared/ui/FormGroup";
 import { Search } from "lucide-react";
 import { useState } from "react";
 import { SearchResult } from "./SearchResult.tsx";

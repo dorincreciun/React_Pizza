@@ -1,5 +1,5 @@
-import { PageLayout } from "../../../shared/layouts/PageLayout.tsx";
-import { Breadcrumbs } from "../../../widgets/breadcrumbs";
+import { PageLayout } from "@/shared/layouts/PageLayout.tsx";
+import { Breadcrumbs } from "@/widgets/breadcrumbs";
 
 export const HomePage = () => {
 	return (

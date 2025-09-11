@@ -1,4 +1,4 @@
-import { cn } from "../../../shared/utils/cn.ts";
+import { cn } from "@/shared/utils/cn.ts";
 
 export const Breadcrumbs = () => {
 	const items = [

@@ -1,7 +1,7 @@
 import { X } from "lucide-react";
 import { type FC, useEffect } from "react";
 import type { ButtonCloseProps } from "../model/types.ts";
-import { cn } from "../../../shared/utils/cn.ts";
+import { cn } from "@/shared/utils/cn.ts";
 
 export const ButtonClose: FC<ButtonCloseProps> = ({ onClick, isOpened }) => {
 	useEffect(() => {

@@ -1,5 +1,5 @@
-import { PageLayout } from "../../../shared/layouts/PageLayout.tsx";
+import { PageLayout } from "@/shared/layouts/PageLayout.tsx";
 
 export const CartPage = () => {
-  return <PageLayout>cart page</PageLayout>;
+	return <PageLayout>cart page</PageLayout>;
 };
