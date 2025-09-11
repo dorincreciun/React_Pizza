@@ -33,6 +33,20 @@ const addons = [
 	},
 ];
 
+/* Todo: Product */
+/*
+Product trebuie sa primeasca ca props urmatoarele:
+
+1. Imaginea
+2. Denumirea
+3. Descrierea
+4. Marimile ce le poate avea produsul
+5. Tipul de alut pe care il poate avea produsul
+6. Tipurile de ingrediente pe care le poate avea produsul
+7. Pretul
+
+*/
+
 export const ProductPage = () => {
 	const { slug } = useParams<{ slug: string }>();
 	console.log(slug);
