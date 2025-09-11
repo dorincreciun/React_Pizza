@@ -5,7 +5,6 @@ import { SizeSelector } from "@/features/product/select-size";
 import { SelectDough } from "@/features/product/select-dough";
 import { type Addon, SelectAddons } from "@/features/product/select-addons";
 import { useParams } from "react-router";
-import { cn } from "@/shared/utils/cn.ts";
 
 const addons = [
 	{
@@ -49,13 +48,14 @@ export const ProductPage = () => {
 			<div className={"pt-10"}>
 				{/* Section Product */}
 
-				<div className={"grid grid-cols-11 gap-11.5"}>
-					<div
-						className={cn(
-							"aspect-square w-[570px] rounded-2xl bg-[#FFF7EE]",
-							"col-span-5"
-						)}
-					></div>
+				<div className={"grid grid-cols-11 items-stretch gap-11.5"}>
+					<div className="col-span-5 flex flex-auto items-center justify-center rounded-2xl bg-[#FFF7EE]">
+						<img
+							src="/pizza.png"
+							alt="Pizza"
+							className="h-full w-full rounded-2xl object-contain"
+						/>
+					</div>
 
 					<div className={"col-span-6"}>
 						{/* Title / Description */}
