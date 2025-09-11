@@ -5,10 +5,43 @@ import { SizeSelector } from "../../../features/product/select-size";
 import { SelectDough } from "../../../features/product/select-dough";
 import { SelectAddons } from "../../../features/product/select-addons";
 import { useParams } from "react-router";
+import { cn } from "../../../shared/utils/cn.ts";
+import type { Addon } from "../../../features/product/select-addons/model/type.ts";
+
+const addons = [
+	{
+		image: "/test-pizza-2.png",
+		name: "Сливочная моцарелла",
+		price: 79,
+		isActive: true,
+	},
+	{
+		image: "/test-pizza.png",
+		name: "Сливочная моцарелла",
+		price: 79,
+		isActive: false,
+	},
+	{
+		image: "/test-pizza-3.png",
+		name: "Сливочная моцарелла",
+		price: 79,
+		isActive: false,
+	},
+	{
+		image: "/test-pizza-4.png",
+		name: "Сливочная моцарелла",
+		price: 79,
+		isActive: false,
+	},
+];
 
 export const ProductPage = () => {
 	const { slug } = useParams<{ slug: string }>();
 	console.log(slug);
+
+	const handleAddonChange = (addon: Addon) => {
+		console.log("Ai selectat addon:", addon);
+	};
 
 	return (
 		<PageLayout className={"container pt-10"}>
@@ -16,14 +49,16 @@ export const ProductPage = () => {
 
 			<div className={"pt-10"}>
 				{/* Section Product */}
-				<div className={"flex items-start gap-11.5"}>
+
+				<div className={"grid grid-cols-11 gap-11.5"}>
 					<div
-						className={
-							"aspect-square w-[570px] rounded-2xl bg-[#FFF7EE]"
-						}
+						className={cn(
+							"aspect-square w-[570px] rounded-2xl bg-[#FFF7EE]",
+							"col-span-5"
+						)}
 					></div>
 
-					<div>
+					<div className={"col-span-6"}>
 						{/* Title / Description */}
 						<div className={"flex flex-col gap-3.5"}>
 							<h1
@@ -40,19 +75,17 @@ export const ProductPage = () => {
 							</span>
 						</div>
 
-						{/* Category select */}
 						<div className={"flex flex-col gap-5 py-6"}>
-							{/* Select 1 */}
 							<SizeSelector />
 
-							{/* Select 2 */}
 							<SelectDough />
 						</div>
 
 						{/* Ingredients */}
-						<div>
-							<SelectAddons />
-						</div>
+						<SelectAddons
+							addons={addons}
+							onChange={handleAddonChange}
+						/>
 
 						<Button size={"large"}>
 							Добавить в корзину за 799₽

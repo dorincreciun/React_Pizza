@@ -1,9 +1,16 @@
 import { cn } from "../../../../shared/utils/cn.ts";
 import type { AddonItemProps } from "../model/type.ts";
 
-export const AddonItem = ({ isActive, name, price, image }: AddonItemProps) => {
+export const AddonItem = ({
+	isActive,
+	onClick,
+	name,
+	price,
+	image,
+}: AddonItemProps) => {
 	return (
 		<div
+			onClick={onClick}
 			className={cn(
 				// Layout
 				"group user-select-none flex flex-auto cursor-pointer flex-col items-center gap-4",
