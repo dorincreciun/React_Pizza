@@ -1,53 +1,43 @@
-import { cn } from "../../../../shared/utils/cn.ts";
-import type { AddonItemProps } from "../model/type.ts";
+import {cn} from "@/shared/utils/cn.ts";
+import type {AddonItemProps} from "@/features/product/select-addons/model/type.ts";
 
 export const AddonItem = ({
-	isActive,
-	onClick,
-	name,
-	price,
-	image,
-}: AddonItemProps) => {
-	return (
-		<div
-			onClick={onClick}
-			className={cn(
-				// Layout
-				"group user-select-none flex flex-auto cursor-pointer flex-col items-center gap-4",
+                              image,
+                              name,
+                              price,
+                              isActive,
+                              onClick,
+                          }: AddonItemProps) => {
+    return (
+        <div
+            onClick={onClick}
+            className={cn(
+                "p-3 rounded-2xl border min-w-[130px]",
+                "flex flex-col items-center gap-2 cursor-pointer",
+                "transition-all duration-300 ease-in-out",
+                isActive
+                    ? "border-primary bg-primary/5 shadow-sm"
+                    : "border-transparent hover:border-neutral-300 hover:bg-neutral-50",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            )}
+        >
+            <div className="overflow-hidden rounded-xl">
+                <img
+                    src={image}
+                    alt={name}
+                    width={110}
+                    height={110}
+                    className={cn(
+                        "rounded-xl object-cover transition-transform duration-300 ease-in-out",
+                        isActive ? "scale-105" : "group-hover:scale-105"
+                    )}
+                />
+            </div>
 
-				// Box model
-				"min-w-[130px] p-2.5",
-
-				// Borders & radius
-				"rounded-2xl border",
-				isActive ? "border-primary" : "border-transparent",
-
-				// Interaction state
-				"active:opacity-70",
-
-				"transition-colors]duration-300 ease-in-out"
-			)}
-		>
-			<div className="shrink-0 overflow-hidden pt-2">
-				<img
-					src={image}
-					alt={name}
-					className={cn(
-						"h-27.5 w-27.5 rounded-2xl object-cover",
-						"transition-transform duration-500 ease-in-out",
-						"group-hover:scale-110"
-					)}
-				/>
-			</div>
-
-			<div className="flex h-full flex-col items-center justify-between gap-1">
-				<div className="max-w-[100px] text-center text-xs font-normal text-gray-700">
-					{name}
-				</div>
-				<div className="text-center text-sm font-semibold text-gray-900">
-					{price}
-				</div>
-			</div>
-		</div>
-	);
+            <div className="flex-1 flex flex-col justify-between gap-1 text-center">
+                <div className="font-normal text-xs text-gray-700">{name}</div>
+                <div className="font-semibold text-sm text-gray-900">{price} MDL</div>
+            </div>
+        </div>
+    );
 };
