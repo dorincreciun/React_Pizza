@@ -18,3 +18,6 @@ export const ProductPage = () => {
 		</PageLayout>
 	);
 };
+
+/* React DevTools */
+ProductPage.displayName = "ProductPage";

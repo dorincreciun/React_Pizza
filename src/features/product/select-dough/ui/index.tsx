@@ -4,3 +4,6 @@ import type { DoughsProps } from "@/features/product/select-dough/models/types.t
 export const SelectDough = ({ doughs }: DoughsProps) => {
 	return <SegmentedControl className={"max-w-[420px]"} properties={doughs} />;
 };
+
+/* React DevTools */
+SelectDough.displayName = "Features SelectDough";

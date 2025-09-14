@@ -28,3 +28,6 @@ export const SelectAddons: FC<SelectAddonProps> = ({ addons, onChange }) => {
 		</div>
 	);
 };
+
+/* React DevTools */
+SelectAddons.displayName = "Features SelectAddons";

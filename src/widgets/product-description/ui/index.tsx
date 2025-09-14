@@ -75,3 +75,6 @@ export const ProductDescription = () => {
 		</div>
 	);
 };
+
+/* React DevTools */
+ProductDescription.displayName = "ProductDescription";

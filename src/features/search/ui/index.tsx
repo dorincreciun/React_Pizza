@@ -31,3 +31,6 @@ export const SearchComponent = () => {
 		</div>
 	);
 };
+
+/* React DevTools */
+SearchComponent.displayName = "Features SearchComponent";
