@@ -1,5 +1,5 @@
 import type { ButtonProps } from "../model/types.ts";
-import { cn } from "../../../utils/cn.ts";
+import { cn } from "@/shared/utils/cn.ts";
 
 export const Button = ({
 	label,
@@ -16,10 +16,12 @@ export const Button = ({
 				active
 					? "text-[#373737]"
 					: "text-[#6B7280] hover:text-[#4B5563]",
+				!active && "hover:opacity-90",
 				"focus-visible:ring-2 focus-visible:ring-black/10 focus-visible:outline-none",
-				"transition-colors duration-200 ease-out",
+				"transition-[color,opacity] duration-200 ease-out",
 				className
 			)}
+			data-active={active ? "true" : "false"}
 			{...rest}
 		>
 			{label}

@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import type { SegmentedControlProps } from "../model/types.ts";
 import { Button } from "./Button.tsx";
 import { Glissant } from "./Glissant.tsx";
-import { cn } from "../../../utils/cn.ts";
+import { cn } from "@/shared/utils/cn.ts";
 
 export const SegmentedControl = ({
 	properties,
@@ -10,23 +10,38 @@ export const SegmentedControl = ({
 	onChange,
 	className,
 }: SegmentedControlProps) => {
-	const [activeIndex, setActiveIndex] = useState(
-		Math.min(Math.max(defaultIndex, 0), Math.max(properties.length - 1, 0))
+	const safeDefault = useMemo(
+		() =>
+			Math.min(
+				Math.max(defaultIndex, 0),
+				Math.max(properties.length - 1, 0)
+			),
+		[defaultIndex, properties.length]
 	);
 
-	const handleClick = (index: number) => {
-		setActiveIndex(index);
-		onChange?.(properties[index], index);
-	};
+	const [activeIndex, setActiveIndex] = useState(safeDefault);
+	const wrapperRef = useRef<HTMLDivElement>(null);
+
+	const handleClick = useCallback(
+		(index: number) => {
+			setActiveIndex(index);
+			onChange?.(properties[index], index);
+		},
+		[onChange, properties]
+	);
 
 	if (properties.length === 0) {
-		return;
+		return null;
 	}
 
 	return (
 		<div
+			ref={wrapperRef}
+			role="tablist"
+			aria-label="Segmented control"
 			className={cn(
 				"relative flex rounded-[30px] bg-[#ECECEC] p-[2px] select-none",
+				"focus-within:ring-2 focus-within:ring-black/10",
 				className
 			)}
 		>
@@ -35,6 +50,9 @@ export const SegmentedControl = ({
 			{properties.map((label, index) => (
 				<Button
 					key={label || index}
+					role="tab"
+					aria-selected={index === activeIndex}
+					tabIndex={index === activeIndex ? 0 : -1}
 					label={label}
 					active={index === activeIndex}
 					onClick={() => handleClick(index)}
