@@ -9,8 +9,8 @@ Acest raport evaluează structura proiectului în raport cu principiile Feature-
 ## 1) Rezumat execuitv
 - Proiectul urmează în mare parte principiile FSD: sunt prezente layerele standard (app, pages, widgets, features, entities, shared) și se folosește aliasul de import `@` conform așteptărilor.
 - Rutele sunt compuse în `app` și delegate către `pages`, ceea ce este conform.
-- Slices-urile pentru `entities` și `widgets` folosesc public API (`index.ts`) pentru re-exporturi — bună practică.
-- Sunt câteva puncte de îmbunătățit: consistența barrel-urilor (index.ts) în toate slice‑urile, asigurarea ca imports sunt exclusiv prin public API, naming uniform pentru directoare (ex: `products[id]`), și completarea documentației/descrierilor în layer‑ele cheie.
+- Slices-urile pentru `entities` și `widgets` folosesc public API (`index.tsx`) pentru re-exporturi — bună practică.
+- Sunt câteva puncte de îmbunătățit: consistența barrel-urilor (index.tsx) în toate slice‑urile, asigurarea ca imports sunt exclusiv prin public API, naming uniform pentru directoare (ex: `products[id]`), și completarea documentației/descrierilor în layer‑ele cheie.
 
 
 ## 2) Structura actuală (observată)
@@ -45,8 +45,8 @@ Alte indicii:
 Puncte conforme:
 - Stratificare layere: app → pages → widgets → features → entities → shared (de jos în sus shared/entities, apoi compunere până în app).
 - Compoziție rute în `app/providers/RoutesProvider.tsx` folosind obiecte de rutare exportate de `pages/*/config` — separă infrastructura de declarațiile de pagini.
-- `entities/product/index.ts` re-exportă sub-pachete din UI — public API clar.
-- `widgets/*/index.ts` pare să existe pentru re-export (ex: `widgets/breadcrumbs/index.ts`).
+- `entities/product/index.tsx` re-exportă sub-pachete din UI — public API clar.
+- `widgets/*/index.tsx` pare să existe pentru re-export (ex: `widgets/breadcrumbs/index.tsx`).
 - Folosirea `shared/*` pentru UI primitive, layout, utils, types — bună separare.
 
 Exemple concrete:
@@ -54,16 +54,16 @@ Exemple concrete:
   - importă `cartRoutes` din `@/pages/cart` și `productsRoutes` din `@/pages/products/config/routing.tsx` — OK (pages expune rute).
 - `widgets/product-description/ui/index.tsx`:
   - folosește entități prin `@/entities/product` (public API) și features prin `@/features/...` — OK, compunere tipică widget.
-- `entities/product/index.ts`:
+- `entities/product/index.tsx`:
   - re-exportă `ProductInfo`, `ProductMedia`, `ProductCard` — OK.
 
 
 ## 4) Observații și riscuri (neconformități minore)
 1. Consistența barrel-urilor (public API):
-   - Entities: OK pentru `entities/product` (are `index.ts`).
-   - Widgets: există `widgets/*/index.ts` — bine.
-   - Features: nu toate features par să aibă un `index.ts` public la rădăcina slice‑ului (ex: `features/product/card-action/ui/index.tsx` este componentă, dar lipsește un barrel `features/product/card-action/index.ts` pentru consum extern curat).
-   - Pages: rutele se exportă din `config/routing.tsx` sau `config/routes.tsx`. Ar fi util un `pages/<slice>/index.ts` care re-exportă `routes` și `ui` (dacă e nevoie).
+   - Entities: OK pentru `entities/product` (are `index.tsx`).
+   - Widgets: există `widgets/*/index.tsx` — bine.
+   - Features: nu toate features par să aibă un `index.tsx` public la rădăcina slice‑ului (ex: `features/product/card-action/ui/index.tsx` este componentă, dar lipsește un barrel `features/product/card-action/index.tsx` pentru consum extern curat).
+   - Pages: rutele se exportă din `config/routing.tsx` sau `config/routes.tsx`. Ar fi util un `pages/<slice>/index.tsx` care re-exportă `routes` și `ui` (dacă e nevoie).
 
 2. Importuri interne by-path în loc de public API:
    - În `entities/product/ui/product-card/index.tsx` sunt importuri absolute către fișiere interne (`@/entities/product/ui/product-card/ProductContent.tsx`, `ProductFooter.tsx`). În interiorul aceluiași slice e acceptabil, dar recomandarea FSD e să menținem un public API intern (un barrel local) pentru a evita importuri deep și a facilita refactorizarea.
@@ -81,22 +81,22 @@ Exemple concrete:
 ## 5) Recomandări concrete
 Prioritate ridicată:
 - Adăugați barrel files (public API) la nivelul fiecărui feature slice:
-  - Exemplu: `src/features/product/card-action/index.ts` care re-exportă din `ui` și eventual `model`.
+  - Exemplu: `src/features/product/card-action/index.tsx` care re-exportă din `ui` și eventual `model`.
   - Similar pentru `features/product/select-size`, `select-dough`, `select-addons`, `features/search`.
 - Standardizați exporturile din pages:
-  - `src/pages/products/index.ts` să re-exporte `productsRoutes` și `ProductsPage` (dacă e util), iar `app` să importe doar din `@/pages/products`.
+  - `src/pages/products/index.tsx` să re-exporte `productsRoutes` și `ProductsPage` (dacă e util), iar `app` să importe doar din `@/pages/products`.
   - Uniformizați numele: folosiți `routes.ts` sau `routing.ts` în mod consistent.
 
 Prioritate medie:
 - Reduceți importurile deep în interiorul entităților printr-un barrel local:
-  - În `entities/product/ui/product-card`, creați un `index.ts` care re-exportă `ProductImage`, `ProductContent`, `ProductFooter`, iar fișierul compozit să importe doar din acel index local.
+  - În `entities/product/ui/product-card`, creați un `index.tsx` care re-exportă `ProductImage`, `ProductContent`, `ProductFooter`, iar fișierul compozit să importe doar din acel index local.
 - Considerați redenumirea `pages/products[id]` în `pages/product-details` (sau similar) și păstrați parametrizarea în `config/routes.tsx`.
 
 Prioritate scăzută/pe termen:
 - Introduceți `processes/` dacă apar fluxuri cross-page.
 - Adăugați `ARCHITECTURE.md` cu:
   - Regulile de import (ce layer poate importa ce layer).
-  - Politica de public API (toate importurile externe prin `index.ts`).
+  - Politica de public API (toate importurile externe prin `index.tsx`).
   - Convenții de naming (kebab-case pentru directoare, fără caractere speciale în nume de slice).
 
 
