@@ -1,4 +1,4 @@
-import type { MediaProps } from "@/entities/product/model/types.ts";
+import type { MediaProps } from "../../model/types/global";
 
 export const ProductMedia = ({ src, alt }: MediaProps) => {
 	return (

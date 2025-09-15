@@ -1,11 +1,11 @@
-import type { TitleProps } from "@/entities/product/model/types.ts";
+import type { TitleProps } from "../../model/types/product-info";
 
-export const Title = ({ title }: TitleProps) => {
+export const Title = ({ children }: TitleProps) => {
 	return (
 		<h1
 			className={"text-[32px] leading-5 font-extrabold tracking-[-0.5px]"}
 		>
-			{title}
+			{children}
 		</h1>
 	);
 };

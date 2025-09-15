@@ -1,7 +1,7 @@
 import type {
 	CompoundComponentProps,
 	ProductInfoProps,
-} from "@/entities/product/model/types.ts";
+} from "@/entities/product/model/types/product-info";
 import { Title } from "./Title";
 import { Description } from "./Description";
 

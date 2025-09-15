@@ -1,4 +1,3 @@
-/* ------------------------ ProductInfo ------------------------------------- */
 /* Title */
 import type { FC, ReactElement, ReactNode } from "react";
 
@@ -20,11 +19,4 @@ export type ProductInfoProps = {
 export type CompoundComponentProps = FC<ProductInfoProps> & {
 	Title: FC<TitleProps>;
 	Description: FC<DescriptionProps>;
-};
-
-/* -------------------------- MediaProps ------------------------------------ */
-/* MediaProps */
-export type MediaProps = {
-	src: string;
-	alt: string;
 };
