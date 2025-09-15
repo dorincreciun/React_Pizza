@@ -5,7 +5,7 @@ import { Button } from "@/shared/ui/Button";
 
 export const Filter = () => {
 	return (
-		<div className={"w-[224px]"}>
+		<div className={"w-[224px] shrink-0"}>
 			<div className={"mb-7.5 text-[22px] font-bold"}>Фильтрация</div>
 
 			<div className={"flex flex-col gap-3.5"}>

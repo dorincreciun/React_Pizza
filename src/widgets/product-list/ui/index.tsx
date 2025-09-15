@@ -1,5 +1,6 @@
 import { Tabs } from "@/shared/ui/Tabs";
 import { Filter } from "@/features/product/filter";
+import { ProductCard } from "@/entities/product";
 
 const tabLists = [
 	{
@@ -52,9 +53,166 @@ export const ProductList = () => {
 
 				<div className="flex gap-10">
 					<Filter />
-					<div className={"flex-auto bg-gray-50"}>
+					<div className={"flex-auto"}>
 						<Tabs.Content value="Все">
-							Conținutul pentru tab-ul Descriere.
+							<div className={"grid grid-cols-3 gap-12.5"}>
+								<ProductCard>
+									<ProductCard.Image
+										src={"/pizza.png"}
+										alt={"pizza"}
+									/>
+									<ProductCard.Content>
+										<ProductCard.Content.Title>
+											Pizza Diablo
+										</ProductCard.Content.Title>
+										<ProductCard.Content.Description>
+											Lorem ipsum dolor sit amet,
+											consectetur adipisicing elit. A
+											aliquam aut autem dignissimos
+											dolore, ducimus eius fuga magnam
+											molestiae non quam quidem ratione
+										</ProductCard.Content.Description>
+									</ProductCard.Content>
+									<ProductCard.Footer>
+										<ProductCard.Footer.Price>
+											$100
+										</ProductCard.Footer.Price>
+										<ProductCard.Footer.Action>
+											btn
+										</ProductCard.Footer.Action>
+									</ProductCard.Footer>
+								</ProductCard>
+								<ProductCard>
+									<ProductCard.Image
+										src={"/pizza.png"}
+										alt={"pizza"}
+									/>
+									<ProductCard.Content>
+										<ProductCard.Content.Title>
+											Pizza Diablo
+										</ProductCard.Content.Title>
+										<ProductCard.Content.Description>
+											Lorem ipsum dolor sit amet,
+											consectetur adipisicing elit. A
+											aliquam aut autem dignissimos
+											dolore, ducimus eius fuga magnam
+											molestiae non quam quidem ratione
+										</ProductCard.Content.Description>
+									</ProductCard.Content>
+									<ProductCard.Footer>
+										<ProductCard.Footer.Price>
+											$100
+										</ProductCard.Footer.Price>
+										<ProductCard.Footer.Action>
+											btn
+										</ProductCard.Footer.Action>
+									</ProductCard.Footer>
+								</ProductCard>
+								<ProductCard>
+									<ProductCard.Image
+										src={"/pizza.png"}
+										alt={"pizza"}
+									/>
+									<ProductCard.Content>
+										<ProductCard.Content.Title>
+											Pizza Diablo
+										</ProductCard.Content.Title>
+										<ProductCard.Content.Description>
+											Lorem ipsum dolor sit amet,
+											consectetur adipisicing elit. A
+											aliquam aut autem dignissimos
+											dolore, ducimus eius fuga magnam
+											molestiae non quam quidem ratione
+										</ProductCard.Content.Description>
+									</ProductCard.Content>
+									<ProductCard.Footer>
+										<ProductCard.Footer.Price>
+											$100
+										</ProductCard.Footer.Price>
+										<ProductCard.Footer.Action>
+											btn
+										</ProductCard.Footer.Action>
+									</ProductCard.Footer>
+								</ProductCard>
+								<ProductCard>
+									<ProductCard.Image
+										src={"/pizza.png"}
+										alt={"pizza"}
+									/>
+									<ProductCard.Content>
+										<ProductCard.Content.Title>
+											Pizza Diablo
+										</ProductCard.Content.Title>
+										<ProductCard.Content.Description>
+											Lorem ipsum dolor sit amet,
+											consectetur adipisicing elit. A
+											aliquam aut autem dignissimos
+											dolore, ducimus eius fuga magnam
+											molestiae non quam quidem ratione
+										</ProductCard.Content.Description>
+									</ProductCard.Content>
+									<ProductCard.Footer>
+										<ProductCard.Footer.Price>
+											$100
+										</ProductCard.Footer.Price>
+										<ProductCard.Footer.Action>
+											btn
+										</ProductCard.Footer.Action>
+									</ProductCard.Footer>
+								</ProductCard>
+								<ProductCard>
+									<ProductCard.Image
+										src={"/pizza.png"}
+										alt={"pizza"}
+									/>
+									<ProductCard.Content>
+										<ProductCard.Content.Title>
+											Pizza Diablo
+										</ProductCard.Content.Title>
+										<ProductCard.Content.Description>
+											Lorem ipsum dolor sit amet,
+											consectetur adipisicing elit. A
+											aliquam aut autem dignissimos
+											dolore, ducimus eius fuga magnam
+											molestiae non quam quidem ratione
+										</ProductCard.Content.Description>
+									</ProductCard.Content>
+									<ProductCard.Footer>
+										<ProductCard.Footer.Price>
+											$100
+										</ProductCard.Footer.Price>
+										<ProductCard.Footer.Action>
+											btn
+										</ProductCard.Footer.Action>
+									</ProductCard.Footer>
+								</ProductCard>
+								<ProductCard>
+									<ProductCard.Image
+										src={"/pizza.png"}
+										alt={"pizza"}
+									/>
+									<ProductCard.Content>
+										<ProductCard.Content.Title>
+											Pizza Diablo
+										</ProductCard.Content.Title>
+										<ProductCard.Content.Description>
+											Lorem ipsum dolor sit amet,
+											consectetur adipisicing elit. A
+											aliquam aut autem dignissimos
+											dolore, ducimus eius fuga magnam
+											molestiae non quam quidem ratione
+										</ProductCard.Content.Description>
+									</ProductCard.Content>
+									<ProductCard.Footer>
+										<ProductCard.Footer.Price>
+											$100
+										</ProductCard.Footer.Price>
+										<ProductCard.Footer.Action>
+											btn
+										</ProductCard.Footer.Action>
+									</ProductCard.Footer>
+								</ProductCard>
+							</div>
 						</Tabs.Content>
 						<Tabs.Content value="Мясные">
 							Conținutul pentru tab-ul Ingrediente.
