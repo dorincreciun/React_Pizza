@@ -39,7 +39,11 @@ export const ProductsPage = () => {
 						<h1 className={"pb-9 text-4xl font-extrabold"}>
 							Все пиццы
 						</h1>
-						<div>
+						<div
+							className={
+								"flex items-center justify-between gap-10"
+							}
+						>
 							<Tabs.List>
 								{tabLists.map((item) => (
 									<Tabs.Trigger
@@ -56,7 +60,7 @@ export const ProductsPage = () => {
 					<div className="flex gap-10">
 						<ProductList />
 						<div className={"flex-auto bg-gray-50"}>
-							<Tabs.Content value="descriere">
+							<Tabs.Content value="Все">
 								Conținutul pentru tab-ul Descriere.
 							</Tabs.Content>
 							<Tabs.Content value="Мясные">
