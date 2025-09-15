@@ -11,7 +11,6 @@ export const ProductRecommendation = () => {
 			</div>
 
 			<div className={"grid grid-cols-4 items-stretch gap-6 py-8"}>
-				]{/* Item */}
 				<ProductCard>
 					<ProductCard.Image src={"/pizza.png"} alt={"pizza"} />
 					<ProductCard.Content>
