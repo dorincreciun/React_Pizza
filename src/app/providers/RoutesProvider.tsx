@@ -1,15 +1,15 @@
 import { useRoutes } from "react-router";
-import { homeRoutes } from "../../pages/home";
-import { cartRoutes } from "../../pages/cart";
-import { notFoundRoutes } from "../../pages/not-found";
-import { orderRoutes } from "../../pages/order";
-import { productRoutes } from "../../pages/product";
+import { cartRoutes } from "@/pages/cart";
+import { notFoundRoutes } from "@/pages/not-found";
+import { orderRoutes } from "@/pages/order";
+import { productsRoutes } from "@/pages/products/config/routing.tsx";
+import { productsIdRoutes } from "@/pages/products[id]/config/routes.tsx";
 
 export const RoutesProvider = () =>
-  useRoutes([
-    ...homeRoutes,
-    ...cartRoutes,
-    ...notFoundRoutes,
-    ...orderRoutes,
-    ...productRoutes,
-  ]);
+	useRoutes([
+		...productsRoutes,
+		...cartRoutes,
+		...notFoundRoutes,
+		...orderRoutes,
+		...productsIdRoutes,
+	]);

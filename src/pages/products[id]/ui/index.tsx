@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/widgets/breadcrumbs";
 import { ProductDescription } from "@/widgets/product-description";
 import { ProductRecommendation } from "@/widgets/product-recommendation";
 
-export const ProductPage = () => {
+export const ProductsIdPage = () => {
 	return (
 		<PageLayout className={"container pt-10"}>
 			<Breadcrumbs />
@@ -20,4 +20,4 @@ export const ProductPage = () => {
 };
 
 /* React DevTools */
-ProductPage.displayName = "ProductPage";
+ProductsIdPage.displayName = "ProductPage";
