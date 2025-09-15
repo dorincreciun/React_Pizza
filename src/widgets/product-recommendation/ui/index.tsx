@@ -1,6 +1,5 @@
-import { Button } from "@/shared/ui/Button";
-import { Grid2x2Plus } from "lucide-react";
 import { ProductCard } from "@/entities/product";
+import { CardAction } from "@/features/product/card-action";
 
 export const ProductRecommendation = () => {
 	return (
@@ -12,7 +11,7 @@ export const ProductRecommendation = () => {
 			</div>
 
 			<div className={"grid grid-cols-4 items-stretch gap-6 py-8"}>
-				{/* Item */}
+				]{/* Item */}
 				<ProductCard>
 					<ProductCard.Image src={"/pizza.png"} alt={"pizza"} />
 					<ProductCard.Content>
@@ -30,10 +29,7 @@ export const ProductRecommendation = () => {
 							<span className={"font-bold"}>395 ₽</span>
 						</ProductCard.Footer.Price>
 						<ProductCard.Footer.Action>
-							<Button color={"secondary"}>
-								<Grid2x2Plus />
-								Собрать
-							</Button>
+							<CardAction configure={false} />
 						</ProductCard.Footer.Action>
 					</ProductCard.Footer>
 				</ProductCard>
