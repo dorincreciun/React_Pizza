@@ -16,7 +16,6 @@ export const TabsContent: FC<TabProps> = ({ value, children }) => {
 			role="tabpanel"
 			id={`tabs-content-${value}`}
 			aria-labelledby={`tabs-trigger-${value}`}
-			className="py-4"
 		>
 			{children}
 		</div>

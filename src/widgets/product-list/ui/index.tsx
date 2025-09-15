@@ -4,9 +4,9 @@ import { Button } from "@/shared/ui/Button";
 
 export const ProductList = () => {
 	return (
-		<div>
-			<div className={"max-w-[224px]"}>
-				<div className={"my-9 text-[22px] font-bold"}>Фильтрация</div>
+		<div className={"bg-gray-50"}>
+			<div className={"w-[224px]"}>
+				<div className={"mb-9 text-[22px] font-bold"}>Фильтрация</div>
 
 				<div className={"flex flex-col gap-4"}>
 					<Checkbox label={"Можно собирать"} />
