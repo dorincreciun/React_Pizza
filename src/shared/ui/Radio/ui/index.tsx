@@ -34,7 +34,7 @@ export const Radio: FC<RadioProps> = ({ id, label, className, ...props }) => {
 				/>
 			</span>
 
-			<span className="text-muted text-sm leading-5">{label}</span>
+			<span className="text-base text-black">{label}</span>
 		</label>
 	);
 };

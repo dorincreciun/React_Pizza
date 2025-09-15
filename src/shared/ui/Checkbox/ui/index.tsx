@@ -13,7 +13,7 @@ export const Checkbox: FC<CheckboxProps> = ({
 			htmlFor={id}
 			className={cn(
 				"group inline-flex cursor-pointer items-center gap-2 select-none",
-				"animate-[fade-blur-in_0.5s_ease]",
+				"animate-fade-in", // folosește animația definită în tailwind.config.js
 				className
 			)}
 		>
@@ -27,12 +27,12 @@ export const Checkbox: FC<CheckboxProps> = ({
 			<span
 				className={cn(
 					"relative inline-flex h-5 w-5 items-center justify-center rounded-md",
-					"border border-[color:var(--color-neutral)] bg-[color:var(--color-surface)]",
+					"border-neutral bg-surface border",
 					"transition-[background-color,border-color,transform] duration-200 ease-out",
-					"group-hover:border-[color:var(--color-muted)] active:scale-95",
-					"peer-checked:border-[color:var(--color-primary)] peer-checked:bg-[color:var(--color-primary)]",
+					"group-hover:border-muted active:scale-95",
+					"peer-checked:border-primary peer-checked:bg-primary",
 					"peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100",
-					"peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--color-primary)] peer-focus-visible:ring-offset-2 peer-focus-visible:outline-none"
+					"peer-focus-visible:ring-primary peer-focus-visible:ring-2 peer-focus-visible:ring-offset-2 peer-focus-visible:outline-none"
 				)}
 			>
 				<svg
@@ -52,9 +52,7 @@ export const Checkbox: FC<CheckboxProps> = ({
 				</svg>
 			</span>
 
-			<span className="text-sm leading-5 text-[color:var(--color-muted)]">
-				{label}
-			</span>
+			<span className="text-base text-black">{label}</span>
 		</label>
 	);
 };
