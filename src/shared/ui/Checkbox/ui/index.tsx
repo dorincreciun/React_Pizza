@@ -26,7 +26,7 @@ export const Checkbox: FC<CheckboxProps> = ({
 
 			<span
 				className={cn(
-					"relative inline-flex h-5 w-5 items-center justify-center rounded-md",
+					"relative inline-flex h-6 w-6 items-center justify-center rounded-md",
 					"border-neutral bg-surface border",
 					"transition-[background-color,border-color,transform] duration-200 ease-out",
 					"group-hover:border-muted active:scale-95",
