@@ -1,6 +1,9 @@
 import { Tabs } from "@/shared/ui/Tabs";
 import { Filter } from "@/features/product/filter";
 import { ProductCard } from "@/entities/product";
+import { Title } from "@/shared/ui/Title";
+import { ArrowUpDown } from "lucide-react";
+import { cn } from "@/shared/utils/cn.ts";
 
 const tabLists = [
 	{
@@ -34,9 +37,9 @@ export const ProductList = () => {
 		<div className={"pt-10"}>
 			<Tabs defaultValue="descriere">
 				<div className={"pb-9"}>
-					<h1 className={"pb-9 text-4xl font-extrabold"}>
+					<Title as={"h1"} size={"xl"} className={"pb-9"}>
 						Все пиццы
-					</h1>
+					</Title>
 					<div className={"flex items-center justify-between gap-10"}>
 						<Tabs.List>
 							{tabLists.map((item) => (
@@ -48,6 +51,24 @@ export const ProductList = () => {
 								</Tabs.Trigger>
 							))}
 						</Tabs.List>
+
+						<button
+							className={cn(
+								"flex cursor-pointer items-center gap-[10px]",
+								"bg-surface relative flex rounded-2xl p-4 select-none",
+								"focus-within:ring-2 focus-within:ring-gray-400/10",
+								"active:translate-y-0.5",
+								"transition-all duration-200 ease-in-out"
+							)}
+						>
+							<ArrowUpDown />
+							<div className={"flex items-center gap-2"}>
+								<span className={"text-[#202020]"}>
+									Сортировка:
+								</span>
+								<span className={"text-primary"}>рейтингу</span>
+							</div>
+						</button>
 					</div>
 				</div>
 

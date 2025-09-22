@@ -1,19 +1,22 @@
-import { Empty } from "@/widgets/cart-sidebar/ui/Empty.tsx";
 import { cn } from "@/shared/utils/cn.ts";
+import { useState } from "react";
+import { BackdropLayout } from "@/shared/layouts/BackdropLayout.tsx";
 
 export const CartSidebar = () => {
-	const isEmpty = true;
+	const [isOpen, setIsOpen] = useState(true);
 
 	return (
-		<div
-			className={cn(
-				"fixed top-0 right-0 bottom-0 z-20 w-[400px] bg-gray-300",
-				"translate-x-full transform-gpu will-change-transform",
-				"animate-cart-open",
-				isEmpty && "flex items-center justify-center"
-			)}
-		>
-			{isEmpty && <Empty />}
-		</div>
+		<>
+			<BackdropLayout isOpen={isOpen} />
+
+			{/* Cart section */}
+			<div
+				className={cn(
+					"fixed top-0 right-0 bottom-0 h-screen bg-white",
+					"transition-[width] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+					isOpen ? "z-10 w-[400px]" : "w-0"
+				)}
+			></div>
+		</>
 	);
 };
