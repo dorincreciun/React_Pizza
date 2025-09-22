@@ -3,8 +3,10 @@ import { SearchComponent } from "@/features/search";
 import { ShoppingCart, User } from "lucide-react";
 import { cn } from "../utils/cn.ts";
 import { Button } from "../ui/Button";
+import { useCart } from "@/features/cart/sidebar/model/useCart.ts";
 
 export const HeaderLayout = () => {
+	const fnOpenCart = useCart((state) => state.open);
 	return (
 		<header
 			className={cn(
@@ -33,6 +35,7 @@ export const HeaderLayout = () => {
 						size={"large"}
 						kind={"outlined"}
 						aria-label={"Button cart"}
+						onClick={fnOpenCart}
 					>
 						<ShoppingCart />
 					</Button>
