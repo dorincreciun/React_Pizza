@@ -16,16 +16,16 @@ export const CartSidebar: FC<CartProps> = ({ children }) => {
 			{/* Cart section */}
 			<div
 				className={cn(
-					"fixed top-0 right-0 bottom-0 h-screen bg-white",
-					"transition-[width] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-					isOpen ? "z-10 w-[400px]" : "w-0"
+					"fixed top-0 right-0 z-10 h-full w-[400px] bg-white",
+					"transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+					isOpen ? "translate-x-0" : "translate-x-full"
 				)}
 			>
 				<div className={"flex items-center justify-between p-5"}>
 					<div>
 						В корзине <span>3 товара</span>
 					</div>
-					<button onClick={fnCloseCart}>
+					<button className={"cursor-pointer"} onClick={fnCloseCart}>
 						<X />
 					</button>
 				</div>

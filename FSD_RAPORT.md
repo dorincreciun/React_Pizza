@@ -10,7 +10,7 @@ Acest raport evaluează structura proiectului în raport cu principiile Feature-
 - Proiectul urmează în mare parte principiile FSD: sunt prezente layerele standard (app, pages, widgets, features, entities, shared) și se folosește aliasul de import `@` conform așteptărilor.
 - Rutele sunt compuse în `app` și delegate către `pages`, ceea ce este conform.
 - Slices-urile pentru `entities` și `widgets` folosesc public API (`index.tsx`) pentru re-exporturi — bună practică.
-- Sunt câteva puncte de îmbunătățit: consistența barrel-urilor (index.tsx) în toate slice‑urile, asigurarea ca imports sunt exclusiv prin public API, naming uniform pentru directoare (ex: `products[id]`), și completarea documentației/descrierilor în layer‑ele cheie.
+- Sunt câteva puncte de îmbunătățit: consistența barrel-urilor (index.tsx) în toate slice‑urile, asigurarea ca imports sunt exclusiv prin public API, naming uniform pentru directoare (ex: `products[indexSlug]`), și completarea documentației/descrierilor în layer‑ele cheie.
 
 
 ## 2) Structura actuală (observată)
@@ -22,7 +22,7 @@ Layere identificate în `src/`:
 - pages
   - `pages/products/config/routing.tsx` — declară rutele paginii
   - `pages/products/ui/index.tsx` — componentă pagină
-  - `pages/products[id]/config/routes.tsx` — rute pagină cu parametru slug
+  - `pages/products[indexSlug]/config/routes.tsx` — rute pagină cu parametru slug
   - `pages/cart`, `pages/order`, `pages/not-found`
 - widgets
   - `widgets/breadcrumbs`
@@ -69,7 +69,7 @@ Exemple concrete:
    - În `entities/product/ui/product-card/index.tsx` sunt importuri absolute către fișiere interne (`@/entities/product/ui/product-card/ProductContent.tsx`, `ProductFooter.tsx`). În interiorul aceluiași slice e acceptabil, dar recomandarea FSD e să menținem un public API intern (un barrel local) pentru a evita importuri deep și a facilita refactorizarea.
 
 3. Naming/organizare non-standard pentru pagini dinamice:
-   - Directorul `pages/products[id]` este funcțional, dar naming-ul cu paranteze pătrate este mai specific Next.js. În FSD, de obicei se preferă un naming semantic per slice (ex: `pages/product-details`), iar parametrizarea rutei se află în `config/routes.tsx`.
+   - Directorul `pages/products[indexSlug]` este funcțional, dar naming-ul cu paranteze pătrate este mai specific Next.js. În FSD, de obicei se preferă un naming semantic per slice (ex: `pages/product-details`), iar parametrizarea rutei se află în `config/routes.tsx`.
 
 4. Lipsa layer `processes` (opțional):
    - Nu este obligatoriu. Dacă vor apărea fluxuri cross-page (checkout, onboarding), `processes` poate ajuta la compunere la nivel mai înalt decât `pages`/`widgets`.
@@ -90,7 +90,7 @@ Prioritate ridicată:
 Prioritate medie:
 - Reduceți importurile deep în interiorul entităților printr-un barrel local:
   - În `entities/product/ui/product-card`, creați un `index.tsx` care re-exportă `ProductImage`, `ProductContent`, `ProductFooter`, iar fișierul compozit să importe doar din acel index local.
-- Considerați redenumirea `pages/products[id]` în `pages/product-details` (sau similar) și păstrați parametrizarea în `config/routes.tsx`.
+- Considerați redenumirea `pages/products[indexSlug]` în `pages/product-details` (sau similar) și păstrați parametrizarea în `config/routes.tsx`.
 
 Prioritate scăzută/pe termen:
 - Introduceți `processes/` dacă apar fluxuri cross-page.

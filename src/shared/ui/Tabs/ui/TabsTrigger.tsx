@@ -4,13 +4,10 @@ import { TabsContext } from "../model/context";
 import type { TabProps } from "../model/types";
 import { cn } from "@/shared/utils/cn";
 
-export const TabsTrigger: FC<TabProps> = ({ value, children }) => {
+export const TabsTrigger: FC<TabProps> = ({ value, children, isActive }) => {
 	const ctx = useContext(TabsContext);
 	if (!ctx)
 		throw new Error("Tabs.Trigger trebuie folosit în interiorul <Tabs>.");
-	const { active, setActive } = ctx;
-
-	const isActive = active === value;
 
 	return (
 		<button
@@ -19,7 +16,6 @@ export const TabsTrigger: FC<TabProps> = ({ value, children }) => {
 			id={`tabs-trigger-${value}`}
 			aria-selected={isActive}
 			aria-controls={`tabs-content-${value}`}
-			onClick={() => setActive(value)}
 			className={cn(
 				"cursor-pointer rounded-2xl px-6 py-2.5 text-base font-medium",
 				"transition-all duration-300 ease-out",

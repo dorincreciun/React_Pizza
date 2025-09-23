@@ -3,6 +3,7 @@ import type { FC, ReactNode } from "react";
 export type TabProps = {
 	value: string;
 	children: ReactNode;
+	isActive: boolean;
 };
 
 export type TabsProps = {

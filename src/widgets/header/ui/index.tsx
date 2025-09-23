@@ -1,11 +1,11 @@
-import { Logo } from "../ui/Logo";
 import { SearchComponent } from "@/features/search";
 import { ShoppingCart, User } from "lucide-react";
-import { cn } from "../utils/cn.ts";
-import { Button } from "../ui/Button";
 import { useCart } from "@/features/cart/sidebar/model/useCart.ts";
+import { Button } from "@/shared/ui/Button";
+import { Logo } from "@/shared/ui/Logo";
+import { cn } from "@/shared/utils/cn.ts";
 
-export const HeaderLayout = () => {
+export const Header = () => {
 	const fnOpenCart = useCart((state) => state.open);
 	return (
 		<header

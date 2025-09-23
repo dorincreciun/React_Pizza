@@ -4,6 +4,7 @@ import { ProductCard } from "@/entities/product";
 import { Title } from "@/shared/ui/Title";
 import { ArrowUpDown } from "lucide-react";
 import { cn } from "@/shared/utils/cn.ts";
+import { useParams } from "react-router";
 
 const tabLists = [
 	{
@@ -33,6 +34,8 @@ const tabLists = [
 ];
 
 export const ProductList = () => {
+	const { category } = useParams();
+	console.log(category);
 	return (
 		<div className={"pt-10"}>
 			<Tabs defaultValue="descriere">
