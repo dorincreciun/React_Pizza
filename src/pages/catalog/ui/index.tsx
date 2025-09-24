@@ -3,7 +3,6 @@ import { NavLink, Outlet } from "react-router";
 import { cn } from "@/shared/utils/cn.ts";
 import { ArrowUpDown } from "lucide-react";
 import { Title } from "@/shared/ui/Title";
-import { Filter } from "@/features/product/filter";
 
 const tabLists = [
 	{
@@ -84,10 +83,7 @@ export const CatalogPage = () => {
 						</button>
 					</div>
 				</div>
-				<div className="flex gap-10">
-					<Filter />
-					<Outlet />
-				</div>
+				<Outlet />
 			</div>
 		</PageLayout>
 	);

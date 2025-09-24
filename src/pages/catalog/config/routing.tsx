@@ -6,6 +6,9 @@ export const catalogRoutes: RouteObject[] = [
 	{
 		path: "/",
 		element: <CatalogPage />,
-		children: [{ path: ":slug", element: <CatalogPageSlug /> }],
+		children: [
+			{ index: true, element: <CatalogPageSlug /> },
+			{ path: ":slug", element: <CatalogPageSlug /> },
+		],
 	},
 ];
