@@ -1,7 +1,7 @@
 import { ProductCard } from "@/entities/product";
 import { useParams } from "react-router";
 import { useEffect } from "react";
-import { Filter } from "@/features/product/filter";
+import { CategoryFilter } from "@/widgets/category-filter";
 
 export const CatalogPageSlug = () => {
 	const { slug } = useParams();
@@ -13,7 +13,7 @@ export const CatalogPageSlug = () => {
 
 	return (
 		<div className="flex gap-10">
-			<Filter />
+			<CategoryFilter />
 			<div className={"grid grid-cols-3"}>
 				<ProductCard>
 					<ProductCard.Image src={"/pizza.png"} alt={"pizza"} />
