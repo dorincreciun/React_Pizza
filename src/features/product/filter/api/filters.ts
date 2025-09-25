@@ -1,6 +1,5 @@
 export const filters = {
 	flags: ["Можно собирать", "Новинки"],
-	price: { min: 0, max: 1000 },
 	ingredients: [
 		"Сырный соус",
 		"Моцарелла",

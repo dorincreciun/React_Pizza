@@ -6,7 +6,8 @@ import { Title } from "@/shared/ui/Title";
 import { useFilter } from "@/features/product/filter/model/useFilter.ts";
 
 export const Filter = () => {
-	const { flags, price, ingredients, doughTypes } = useFilter();
+	const { flags, ingredients, doughTypes } = useFilter();
+
 	return (
 		<>
 			{/* Flags */}
@@ -19,40 +20,32 @@ export const Filter = () => {
 			)}
 
 			{/* Price */}
-			{price && (
-				<div
-					className={
-						"my-6 flex flex-col gap-3.5 border-t border-b border-[#F6F6F6] py-6"
-					}
-				>
-					{/* Title section */}
-					<Title as={"h3"} size={"xs"}>
-						Цена от и до:
-					</Title>
-					<div
-						className={"flex items-center justify-between gap-3.5"}
-					>
-						<FormGroup>
-							<FormGroup.Input
-								minLength={price.min}
-								maxLength={price.max}
-								variant={"secondary"}
-								size={"small"}
-								placeholder={"$0.00"}
-							/>
-						</FormGroup>
-						<FormGroup>
-							<FormGroup.Input
-								minLength={price.min}
-								maxLength={price.max}
-								variant={"secondary"}
-								size={"small"}
-								placeholder={"$0.00"}
-							/>
-						</FormGroup>
-					</div>
+			<div
+				className={
+					"my-6 flex flex-col gap-3.5 border-t border-b border-[#F6F6F6] py-6"
+				}
+			>
+				{/* Title section */}
+				<Title as={"h3"} size={"xs"}>
+					Цена от и до:
+				</Title>
+				<div className={"flex items-center justify-between gap-3.5"}>
+					<FormGroup>
+						<FormGroup.Input
+							variant={"secondary"}
+							size={"small"}
+							placeholder={"$0.00"}
+						/>
+					</FormGroup>
+					<FormGroup>
+						<FormGroup.Input
+							variant={"secondary"}
+							size={"small"}
+							placeholder={"$0.00"}
+						/>
+					</FormGroup>
 				</div>
-			)}
+			</div>
 
 			{/* Ingredients */}
 			{ingredients && (
