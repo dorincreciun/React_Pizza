@@ -1,3 +1,4 @@
-export { ProductInfo } from "./ui/product-info";
-export { ProductMedia } from "./ui/product-media";
-export { ProductCard } from "./ui/product-card";
+export { ProductTitle } from "./ui/ProductTitle";
+export { ProductImage } from "./ui/ProductImage";
+export { ProductDescription } from "./ui/ProductDescription";
+export { ProductPrice } from "./ui/ProductPrice";

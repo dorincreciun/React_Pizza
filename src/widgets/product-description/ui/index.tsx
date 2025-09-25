@@ -1,8 +1,4 @@
-import { ProductInfo, ProductMedia } from "@/entities/product";
-import { SizeSelector } from "@/features/product/select-size";
-import { SelectDough } from "@/features/product/select-dough";
-import { type Addon, SelectAddons } from "@/features/product/select-addons";
-import { Button } from "@/shared/ui/Button";
+import { type Addon } from "@/features/product/select-addons";
 import { useParams } from "react-router";
 
 const addons = [
@@ -45,33 +41,33 @@ export const ProductDescription = () => {
 
 	return (
 		<div className={"grid grid-cols-11 items-stretch gap-11.5"}>
-			<div className="col-span-5 flex flex-auto items-center justify-center rounded-2xl bg-[#FFF7EE]">
-				<ProductMedia src={"/pizza.png"} alt={"pizza"} />
-			</div>
+			{/*<div className="col-span-5 flex flex-auto items-center justify-center rounded-2xl bg-[#FFF7EE]">*/}
+			{/*	<ProductMedia src={"/pizza.png"} alt={"pizza"} />*/}
+			{/*</div>*/}
 
-			<div className={"col-span-6"}>
-				<ProductInfo>
-					<ProductInfo.Title>Test pizza</ProductInfo.Title>
-					<ProductInfo.Description>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					</ProductInfo.Description>
-				</ProductInfo>
+			{/*<div className={"col-span-6"}>*/}
+			{/*	<ProductInfo>*/}
+			{/*		<ProductInfo.Title>Test pizza</ProductInfo.Title>*/}
+			{/*		<ProductInfo.Description>*/}
+			{/*			Lorem ipsum dolor sit amet, consectetur adipiscing elit.*/}
+			{/*		</ProductInfo.Description>*/}
+			{/*	</ProductInfo>*/}
 
-				<div className={"flex flex-col gap-5 py-6"}>
-					{selectorSize && <SizeSelector sizes={selectorSize} />}
-					{selectorDough && <SelectDough doughs={selectorDough} />}
-				</div>
+			{/*	<div className={"flex flex-col gap-5 py-6"}>*/}
+			{/*		{selectorSize && <SizeSelector sizes={selectorSize} />}*/}
+			{/*		{selectorDough && <SelectDough doughs={selectorDough} />}*/}
+			{/*	</div>*/}
 
-				{/* Ingredients */}
-				{addons && (
-					<SelectAddons
-						addons={addons}
-						onChange={handleAddonChange}
-					/>
-				)}
+			{/*	/!* Ingredients *!/*/}
+			{/*	{addons && (*/}
+			{/*		<SelectAddons*/}
+			{/*			addons={addons}*/}
+			{/*			onChange={handleAddonChange}*/}
+			{/*		/>*/}
+			{/*	)}*/}
 
-				<Button size={"large"}>Добавить в корзину за 799₽</Button>
-			</div>
+			{/*	<Button size={"large"}>Добавить в корзину за 799₽</Button>*/}
+			{/*</div>*/}
 		</div>
 	);
 };
