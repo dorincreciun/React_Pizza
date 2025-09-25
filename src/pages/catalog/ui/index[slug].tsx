@@ -15,7 +15,9 @@ export const CatalogPageSlug = () => {
 		<div className="flex gap-10">
 			<CategoryFilter />
 			<div className={"grid grid-cols-3"}>
-				<ProductCard />
+				<div>
+					<ProductCard />
+				</div>
 			</div>
 		</div>
 	);
