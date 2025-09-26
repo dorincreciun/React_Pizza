@@ -3,6 +3,7 @@ export type ProductImageProps = {
 	alt: string;
 	width: number;
 	height: number;
+	className?: string;
 };
 
 export type ProductTitleProps = { title: string };

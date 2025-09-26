@@ -7,12 +7,14 @@ export const ProductImage: FC<ProductImageProps> = ({
 	alt,
 	width,
 	height,
+	className,
 }) => {
 	return (
 		<div
 			className={cn([
 				"aspect-square overflow-hidden rounded-2xl bg-[#FFF7EE]",
 				"flex items-center justify-center",
+				className,
 			])}
 		>
 			<img
