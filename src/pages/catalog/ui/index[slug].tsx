@@ -1,11 +1,13 @@
 import { useParams } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { CategoryFilter } from "@/widgets/category-filter";
 import { ProductCard } from "@/widgets/product-card";
 import { PageLayout } from "@/shared/layouts/PageLayout.tsx";
 import { Pagination } from "@/widgets/pagination";
+import { PizzaConfiguratorModal } from "@/widgets/pizza-configurator-modal";
 
 export const CatalogPageSlug = () => {
+	const [isCustomizable, setCustomizable] = useState<boolean>(false);
 	const { slug } = useParams();
 	const category = slug ?? "all";
 
@@ -21,8 +23,19 @@ export const CatalogPageSlug = () => {
 					<ProductCard />
 					<ProductCard />
 					<ProductCard />
+					<ProductCard />
+					<ProductCard />
+					<ProductCard />
 				</div>
 
+				{/* Configurator modal */}
+				{isCustomizable && (
+					<PizzaConfiguratorModal
+						onClick={() => setCustomizable(false)}
+					/>
+				)}
+
+				{/* Pagination */}
 				<Pagination />
 			</div>
 		</PageLayout>
