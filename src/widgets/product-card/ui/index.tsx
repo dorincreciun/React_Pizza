@@ -4,57 +4,81 @@ import {
 	ProductPrice,
 	ProductTitle,
 } from "@/entities/product";
-import { cn } from "@/shared/utils/cn.ts";
-import { Link } from "react-router";
-import { Layers } from "lucide-react";
 import { Button } from "@/shared/ui/Button";
+import { Grid2x2Plus, Minus, Plus } from "lucide-react";
 
 const product = {
 	title: "Сырный цыпленок",
 	description:
 		"Цыпленок, моцарелла, сыры чеддер и пармезан, сырный соус, томаты, соус альфредо, чеснок",
-	price: "от 395 ₽",
+	price: "395",
 	image: "/pizza.png",
 };
 
 export const ProductCard = () => {
+	const isNotinCart = false;
+	const isCustomize = false;
 	return (
-		<div className={"group flex flex-col gap-4"}>
-			<div className={"relative"}>
-				<Link to={""} className={"absolute inset-0 z-1"}></Link>
-
-				{/* Button customize */}
-				<Button
-					isOnlyIcon
-					kind={"solid"}
-					color={"secondary"}
-					aria-label={"Deschide modalul de customizare"}
-					className={"absolute top-5 right-5 z-2 bg-transparent"}
-				>
-					<Layers />
-				</Button>
-
+		<div className={"flex flex-col justify-between gap-4"}>
+			<div className={"flex flex-col gap-4"}>
 				<ProductImage
-					className={cn(
-						"[&>img]:origin-center",
-						"[&>img]:transition-all",
-						"[&>img]:duration-500",
-						"[&>img]:ease-out",
-						"[&>img]:group-hover:scale-110",
-						"[&>img]:group-hover:rotate-12"
-					)}
+					src={product.image}
 					alt={""}
 					width={220}
 					height={220}
-					src={product.image}
 				/>
-			</div>
-			<div className={"flex flex-1 flex-col gap-2"}>
-				<ProductTitle title={product.title} />
-				<ProductDescription description={product.description} />
+				<div className={"flex flex-col gap-2"}>
+					<ProductTitle title={product.title} />
+					<ProductDescription description={product.description} />
+				</div>
 			</div>
 			<div className={"flex items-center justify-between"}>
 				<ProductPrice price={product.price} />
+
+				{/* Add to cart */}
+				{!isNotinCart && (
+					<Button color={"secondary"}>
+						<Plus />
+						Добавить
+					</Button>
+				)}
+
+				{/* Customize */}
+				{isCustomize && (
+					<Button color={"secondary"}>
+						<Grid2x2Plus />
+						Собрать
+					</Button>
+				)}
+
+				{/* Cart counter */}
+				{isNotinCart && (
+					<div className={"relative flex items-center gap-10"}>
+						<Button
+							isOnlyIcon
+							color={"primary"}
+							kind={"outlined"}
+							aria-label={"Add Product"}
+						>
+							<Minus />
+						</Button>
+						<div
+							className={
+								"absolute top-1/2 left-1/2 -translate-1/2"
+							}
+						>
+							1
+						</div>
+						<Button
+							isOnlyIcon
+							color={"primary"}
+							kind={"outlined"}
+							aria-label={"Add Product"}
+						>
+							<Plus />
+						</Button>
+					</div>
+				)}
 			</div>
 		</div>
 	);
