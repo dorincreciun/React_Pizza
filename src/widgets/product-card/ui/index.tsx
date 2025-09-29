@@ -67,7 +67,7 @@ export const ProductCard = () => {
 								"absolute top-1/2 left-1/2 -translate-1/2"
 							}
 						>
-							1
+							<span className={"text-base font-bold"}>1</span>
 						</div>
 						<Button
 							isOnlyIcon
