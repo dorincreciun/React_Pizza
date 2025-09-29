@@ -23,9 +23,10 @@ export const CartSidebar: FC = () => {
 			<div
 				className={cn(
 					"fixed top-0 right-0 z-10 h-full w-[400px] bg-[#F4F1EE]",
-					"flex flex-col",
-					"transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-					isOpen ? "translate-x-0" : "translate-x-full"
+					"flex flex-col will-change-transform",
+					isOpen
+						? "[animation:cart-slide-in_.55s_cubic-bezier(0.16,1,0.3,1)_both]"
+						: "[animation:cart-slide-out_.4s_cubic-bezier(0.4,0,0.2,1)_both]"
 				)}
 			>
 				{/* Heading section */}
@@ -124,7 +125,7 @@ export const CartSidebar: FC = () => {
 						<span>Итого:</span>
 						<span className={"text-lg font-bold"}>2245 ₽</span>
 					</div>
-					<Button className={"w-full"}>
+					<Button className={"w-full"} size={"large"}>
 						Оформить заказ <MoveRight />
 					</Button>
 				</div>
