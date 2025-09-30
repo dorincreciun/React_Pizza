@@ -1,9 +1,11 @@
-import { SearchComponent } from "@/features/search";
 import { ShoppingCart, User } from "lucide-react";
+/* features */
+import { SearchComponent } from "@/features/search";
+import { useCart } from "@/features/cart/sidebar";
+/* shared */
 import { Button } from "@/shared/ui/Button";
 import { Logo } from "@/shared/ui/Logo";
-import { cn } from "@/shared/utils/cn.ts";
-import { useCart } from "@/features/cart/sidebar";
+import { cn } from "@/shared/utils/cn";
 
 export const Header = () => {
 	const fnOpenCart = useCart((state) => state.open);
@@ -11,7 +13,7 @@ export const Header = () => {
 		<header
 			className={cn(
 				"sticky top-0 z-10 py-10",
-				"border-b border-border-light bg-white"
+				"border-border-light border-b bg-white"
 			)}
 		>
 			<div className={"container flex items-center gap-10"}>
