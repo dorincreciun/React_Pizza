@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import type { ButtonProps } from "../model/types.ts";
 import { cn } from "../../../utils/cn.ts";
-import { buttonVariants } from "../model/variants.ts";
+import { buttonVariants } from "@/shared/ui/Button/styles/variants.ts";
 
 export const Button: FC<ButtonProps> = ({
 	children,
@@ -13,6 +13,7 @@ export const Button: FC<ButtonProps> = ({
 	["aria-label"]: ariaLabel,
 	isOnlyIcon,
 	loading,
+	ref,
 	...rest
 }: ButtonProps) => {
 	/* Build button classes */
@@ -23,6 +24,7 @@ export const Button: FC<ButtonProps> = ({
 
 	return (
 		<button
+			ref={ref}
 			type={type}
 			aria-label={ariaLabel}
 			aria-busy={loading}
@@ -34,3 +36,5 @@ export const Button: FC<ButtonProps> = ({
 		</button>
 	);
 };
+
+Button.displayName = "Button";

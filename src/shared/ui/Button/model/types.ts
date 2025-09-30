@@ -1,6 +1,6 @@
-import type { ButtonHTMLAttributes, ReactElement, ReactNode } from "react";
+import type { ButtonHTMLAttributes, ReactElement, ReactNode, Ref } from "react";
 import type { VariantProps } from "class-variance-authority";
-import type { buttonVariants } from "./variants";
+import type { buttonVariants } from "@/shared/ui/Button/styles/variants.ts";
 
 export type ButtonSize = NonNullable<
 	VariantProps<typeof buttonVariants>["size"]
@@ -23,6 +23,7 @@ type CommonProps = NativeButtonProps & {
 	color?: ButtonColor;
 	loading?: boolean;
 	className?: string;
+	ref?: Ref<HTMLButtonElement>;
 };
 
 export type IconOnlyProps = CommonProps & {

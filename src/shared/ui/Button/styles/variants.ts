@@ -9,8 +9,8 @@ export const buttonVariants = cva(
 		"disabled:opacity-50 disabled:cursor-not-allowed disabled:active:translate-y-0",
 		"data-[loading=true]:pointer-events-none data-[loading=true]:opacity-70",
 		"data-[loading=true]:pointer-events-none data-[loading=true]:opacity-70",
-		"aria-busy:true:pointer-events-none aria-busy:true:opacity-70",
-		"aria-busy:true:cursor-wait",
+		"aria-busy:pointer-events-none aria-busy:opacity-70",
+		"aria-busy:cursor-wait",
 	],
 	{
 		variants: {
