@@ -22,7 +22,7 @@ export const CartSidebar: FC = () => {
 			{/* Cart section */}
 			<div
 				className={cn(
-					"fixed top-0 right-0 z-10 h-full w-[400px] bg-[#F4F1EE]",
+					"fixed top-0 right-0 z-10 h-full w-[400px] bg-sidebar-bg",
 					"flex flex-col will-change-transform",
 					isOpen
 						? "[animation:cart-slide-in_.55s_cubic-bezier(0.16,1,0.3,1)_both]"
@@ -60,7 +60,7 @@ export const CartSidebar: FC = () => {
 							<div>
 								<div
 									className={
-										"mb-3 border-b border-[#EDEDED] pb-3"
+										"mb-3 border-b border-border-light pb-3"
 									}
 								>
 									<ProductTitle title={"Чизбургер-пицца"} />

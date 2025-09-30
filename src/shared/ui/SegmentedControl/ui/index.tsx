@@ -40,7 +40,7 @@ export const SegmentedControl = ({
 			role="tablist"
 			aria-label="Segmented control"
 			className={cn(
-				"relative flex rounded-[30px] bg-[#ECECEC] p-[2px] select-none",
+				"relative flex rounded-[30px] bg-control-bg p-[2px] select-none",
 				"focus-within:ring-2 focus-within:ring-black/10",
 				className
 			)}

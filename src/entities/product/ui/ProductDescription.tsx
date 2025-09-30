@@ -4,5 +4,5 @@ import type { ProductDescriptionProps } from "../model/types/product";
 export const ProductDescription: FC<ProductDescriptionProps> = ({
 	description,
 }) => {
-	return <p className={"leading-5 text-[#B1B1B1]"}>{description}</p>;
+	return <p className={"leading-5 text-text-muted"}>{description}</p>;
 };

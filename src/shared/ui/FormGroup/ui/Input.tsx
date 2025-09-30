@@ -7,7 +7,7 @@ const InputSlot: InputSlotProps = ({ children, position }) => {
 	return (
 		<div
 			className={cn(
-				"absolute top-1/2 -translate-y-1/2 text-[#C0C0C0]",
+				"absolute top-1/2 -translate-y-1/2 text-icon-muted",
 				positionDirection
 			)}
 		>

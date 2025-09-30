@@ -18,7 +18,7 @@ export const AddonItem = ({
 				"transition-all duration-300 ease-in-out",
 				isActive
 					? "border-primary bg-primary/5 shadow-sm"
-					: "border-transparent hover:border-neutral-300 hover:bg-neutral-50",
+					: "border-transparent hover:border-gray-300 hover:bg-gray-50",
 				"focus-visible:ring-primary focus-visible:ring-2 focus-visible:outline-none"
 			)}
 		>

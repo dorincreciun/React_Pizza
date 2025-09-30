@@ -56,7 +56,7 @@ export const CatalogPage = () => {
 											"transition-all duration-300 ease-out",
 											isActive
 												? "text-primary bg-white shadow-[0_14px_20px_rgba(0,0,0,0.05)]"
-												: "hover:text-primary text-[#202020]"
+												: "hover:text-primary text-text-primary"
 										)
 									}
 								>
@@ -75,7 +75,7 @@ export const CatalogPage = () => {
 						>
 							<ArrowUpDown />
 							<div className={"flex items-center gap-2"}>
-								<span className={"text-[#202020]"}>
+								<span className={"text-text-primary"}>
 									Сортировка:
 								</span>
 								<span className={"text-primary"}>рейтингу</span>

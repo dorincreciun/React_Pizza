@@ -74,7 +74,7 @@ export const PizzaConfiguratorModal = ({
 						className={cn(
 							"aspect-square w-[450px]",
 							"flex items-center justify-center",
-							"overflow-hidden rounded-full border border-dashed border-[#DEDEDE]",
+							"overflow-hidden rounded-full border border-dashed border-border-dashed",
 							"transition-colors duration-200 ease-in-out"
 						)}
 					>
@@ -82,7 +82,7 @@ export const PizzaConfiguratorModal = ({
 							className={cn(
 								"aspect-square w-[375px]",
 								"flex items-center justify-center",
-								"overflow-hidden rounded-full border border-dashed border-[#DEDEDE]",
+								"overflow-hidden rounded-full border border-dashed border-border-dashed",
 								"transition-colors duration-200 ease-in-out"
 							)}
 						>
@@ -104,7 +104,7 @@ export const PizzaConfiguratorModal = ({
 				</div>
 
 				{/* Pizza description */}
-				<div className="flex flex-col gap-5 bg-[#F4F1EE] p-10">
+				<div className="flex flex-col gap-5 bg-sidebar-bg p-10">
 					<div>
 						<ProductTitle title={"Пепперони фреш"} />
 						<ProductDescription

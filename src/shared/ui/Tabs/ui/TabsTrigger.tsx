@@ -21,7 +21,7 @@ export const TabsTrigger: FC<TabProps> = ({ value, children, isActive }) => {
 				"transition-all duration-300 ease-out",
 				isActive
 					? "text-primary bg-white shadow-[0_14px_20px_rgba(0,0,0,0.05)]"
-					: "hover:text-primary text-[#202020]"
+					: "hover:text-primary text-text-primary"
 			)}
 		>
 			{children}

@@ -22,7 +22,7 @@ export const Filter = () => {
 			{/* Price */}
 			<div
 				className={
-					"my-6 flex flex-col gap-3.5 border-t border-b border-[#F6F6F6] py-6"
+					"my-6 flex flex-col gap-3.5 border-t border-b border-border-subtle py-6"
 				}
 			>
 				{/* Title section */}
@@ -65,7 +65,7 @@ export const Filter = () => {
 			{doughTypes && (
 				<div
 					className={
-						"my-6 flex flex-col gap-3.5 border-t border-b border-[#F6F6F6] py-6"
+						"my-6 flex flex-col gap-3.5 border-t border-b border-border-subtle py-6"
 					}
 				>
 					{/* Title section */}

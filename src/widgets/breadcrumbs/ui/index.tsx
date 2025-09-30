@@ -22,16 +22,16 @@ export const Breadcrumbs = () => {
 			<ol
 				className={cn(
 					"flex flex-wrap items-center",
-					"[&>li+li]:before:mx-3 [&>li+li]:before:text-[#E0E0E0] [&>li+li]:before:content-['/']"
+					"[&>li+li]:before:mx-3 [&>li+li]:before:text-separator [&>li+li]:before:content-['/']"
 				)}
 			>
 				<li>
 					<Link
 						to={"/"}
 						className={cn(
-							"text-sm leading-5 font-normal text-[#373737]",
+							"text-sm leading-5 font-normal text-text-dark",
 							"transition-colors duration-200 ease-in-out",
-							"hover:text-[#373737]/60"
+							"hover:text-text-dark/60"
 						)}
 					>
 						Products
@@ -42,9 +42,9 @@ export const Breadcrumbs = () => {
 						<Link
 							to={item.href}
 							className={cn(
-								"text-sm leading-5 font-normal text-[#373737]",
+								"text-sm leading-5 font-normal text-text-dark",
 								"transition-colors duration-200 ease-in-out",
-								"hover:text-[#373737]/60"
+								"hover:text-text-dark/60"
 							)}
 						>
 							{item.label}
