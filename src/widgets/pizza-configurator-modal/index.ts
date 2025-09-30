@@ -1,1 +1,0 @@
-export { PizzaConfiguratorModal } from "./ui";
