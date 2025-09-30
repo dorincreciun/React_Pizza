@@ -1,4 +1,5 @@
 import { cn } from "@/shared/utils/cn.ts";
+import { Link } from "react-router";
 
 export const Breadcrumbs = () => {
 	const items = [
@@ -24,10 +25,22 @@ export const Breadcrumbs = () => {
 					"[&>li+li]:before:mx-3 [&>li+li]:before:text-[#E0E0E0] [&>li+li]:before:content-['/']"
 				)}
 			>
+				<li>
+					<Link
+						to={"/"}
+						className={cn(
+							"text-sm leading-5 font-normal text-[#373737]",
+							"transition-colors duration-200 ease-in-out",
+							"hover:text-[#373737]/60"
+						)}
+					>
+						Products
+					</Link>
+				</li>
 				{items.map((item, index) => (
 					<li key={index}>
-						<a
-							href={item.href}
+						<Link
+							to={item.href}
 							className={cn(
 								"text-sm leading-5 font-normal text-[#373737]",
 								"transition-colors duration-200 ease-in-out",
@@ -35,7 +48,7 @@ export const Breadcrumbs = () => {
 							)}
 						>
 							{item.label}
-						</a>
+						</Link>
 					</li>
 				))}
 			</ol>
