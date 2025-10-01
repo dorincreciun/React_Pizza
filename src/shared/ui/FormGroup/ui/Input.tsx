@@ -1,13 +1,13 @@
 import type { InputSlotProps, InputProps } from "../model/types.ts";
-import { cn } from "../../../utils/cn.ts";
-import { inputVariants } from "../model/variants.ts";
+import { inputVariants } from "../styles/variants.ts";
+import { cn } from "@/shared/utils/cn.ts";
 
 const InputSlot: InputSlotProps = ({ children, position }) => {
 	const positionDirection = position === "left" ? "left-3" : "right-3";
 	return (
 		<div
 			className={cn(
-				"absolute top-1/2 -translate-y-1/2 text-icon-muted",
+				"text-icon-muted absolute top-1/2 -translate-y-1/2",
 				positionDirection
 			)}
 		>

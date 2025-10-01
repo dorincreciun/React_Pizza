@@ -7,7 +7,7 @@ import type {
 	Ref,
 } from "react";
 import type { VariantProps } from "class-variance-authority";
-import type { inputVariants } from "./variants.ts";
+import type { inputVariants } from "../styles/variants.ts";
 
 /* Label */
 export type LabelProps = FC<LabelHTMLAttributes<HTMLLabelElement>>;
@@ -32,7 +32,8 @@ type InputCustomProps = {
 };
 
 export type InputProps = FC<
-	InputCustomProps & Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "prefix">
+	InputCustomProps &
+		Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "prefix">
 >;
 
 /* ---------------------------------------------------------------------------------------------- */
