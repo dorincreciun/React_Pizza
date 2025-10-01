@@ -13,8 +13,8 @@ export const Filter = () => {
 			{/* Flags */}
 			{flags.length > 0 && (
 				<div className={"flex flex-col gap-3.5"}>
-					{flags.map((flag) => (
-						<Checkbox label={flag} />
+					{flags.map((flag, index) => (
+						<Checkbox key={index} label={flag} />
 					))}
 				</div>
 			)}
@@ -22,7 +22,7 @@ export const Filter = () => {
 			{/* Price */}
 			<div
 				className={
-					"my-6 flex flex-col gap-3.5 border-t border-b border-border-subtle py-6"
+					"border-border-subtle my-6 flex flex-col gap-3.5 border-t border-b py-6"
 				}
 			>
 				{/* Title section */}
@@ -65,7 +65,7 @@ export const Filter = () => {
 			{doughTypes && (
 				<div
 					className={
-						"my-6 flex flex-col gap-3.5 border-t border-b border-border-subtle py-6"
+						"border-border-subtle my-6 flex flex-col gap-3.5 border-t border-b py-6"
 					}
 				>
 					{/* Title section */}
@@ -73,8 +73,8 @@ export const Filter = () => {
 						Тип теста:
 					</Title>
 
-					{doughTypes.map((doughType) => (
-						<Radio name={doughType} label={doughType} />
+					{doughTypes.map((doughType, index) => (
+						<Radio key={index} name={doughType} label={doughType} />
 					))}
 				</div>
 			)}

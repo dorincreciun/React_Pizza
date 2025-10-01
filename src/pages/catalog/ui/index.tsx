@@ -49,6 +49,7 @@ export const CatalogPage = () => {
 						>
 							{tabLists.map(({ label, value }) => (
 								<NavLink
+									key={value}
 									to={`/${value}`}
 									className={({ isActive }) =>
 										cn(
