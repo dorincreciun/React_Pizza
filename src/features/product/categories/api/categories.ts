@@ -1,26 +1,26 @@
 export const categories = [
 	{
-		label: "Все",
-		value: "",
+		name: "Все",
+		slug: "",
 	},
 	{
-		label: "Мясные",
-		value: "meat",
+		name: "Мясные",
+		slug: "meat",
 	},
 	{
-		label: "Острые",
-		value: "spicy",
+		name: "Острые",
+		slug: "spicy",
 	},
 	{
-		label: "Сладкие",
-		value: "sweet",
+		name: "Сладкие",
+		slug: "sweet",
 	},
 	{
-		label: "Вегетарианские",
-		value: "vegetarian",
+		name: "Вегетарианские",
+		slug: "vegetarian",
 	},
 	{
-		label: "С курицей",
-		value: "chicken",
+		name: "С курицей",
+		slug: "chicken",
 	},
 ];

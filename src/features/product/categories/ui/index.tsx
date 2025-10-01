@@ -4,6 +4,7 @@ import { useCategories } from "../model/useCategories";
 
 export const Categories = () => {
 	const categories = useCategories();
+
 	return (
 		<nav
 			className={cn(
@@ -12,10 +13,10 @@ export const Categories = () => {
 				"transition-all duration-200 ease-in-out"
 			)}
 		>
-			{categories.map(({ label, value }) => (
+			{categories.map(({ name, slug }) => (
 				<NavLink
-					key={value}
-					to={`/${value}`}
+					key={slug}
+					to={`/${slug}`}
 					className={({ isActive }) =>
 						cn(
 							"cursor-pointer rounded-2xl px-6 py-2.5 text-base font-medium",
@@ -26,7 +27,7 @@ export const Categories = () => {
 						)
 					}
 				>
-					{label}
+					{name}
 				</NavLink>
 			))}
 		</nav>
