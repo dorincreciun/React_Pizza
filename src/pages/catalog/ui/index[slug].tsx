@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { CategoryFilter } from "@/widgets/category-filter";
 import { ProductCard } from "@/widgets/product-card";
 import { PageLayout } from "@/shared/layouts/PageLayout.tsx";
-import { Pagination } from "@/widgets/pagination";
 import { ProductConfiguratorModal } from "@/widgets/product-configurator-modal";
+import { Pagination } from "@/features/product/pagination";
 
 export const CatalogPageSlug = () => {
 	const [showConfigurator, setShowConfigurator] = useState<boolean>(false);
@@ -31,7 +31,7 @@ export const CatalogPageSlug = () => {
 				)}
 
 				{/* Pagination */}
-				<Pagination />
+				<Pagination visiblePages={3} totalPages={10} />
 			</div>
 		</PageLayout>
 	);
