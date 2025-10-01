@@ -1,35 +1,9 @@
 import { PageLayout } from "@/shared/layouts/PageLayout.tsx";
-import { NavLink, Outlet } from "react-router";
+import { Outlet } from "react-router";
 import { cn } from "@/shared/utils/cn.ts";
 import { ArrowUpDown } from "lucide-react";
 import { Title } from "@/shared/ui/Title";
-
-const tabLists = [
-	{
-		label: "Все",
-		value: "",
-	},
-	{
-		label: "Мясные",
-		value: "meat",
-	},
-	{
-		label: "Острые",
-		value: "spicy",
-	},
-	{
-		label: "Сладкие",
-		value: "sweet",
-	},
-	{
-		label: "Вегетарианские",
-		value: "vegetarian",
-	},
-	{
-		label: "С курицей",
-		value: "chicken",
-	},
-];
+import { Categories } from "@/features/product/categories";
 
 export const CatalogPage = () => {
 	return (
@@ -40,31 +14,9 @@ export const CatalogPage = () => {
 						Все пиццы
 					</Title>
 					<div className={"flex items-center justify-between gap-10"}>
-						<nav
-							className={cn(
-								"bg-surface relative flex rounded-2xl px-2 py-1.5 select-none",
-								"focus-within:ring-2 focus-within:ring-gray-400/10",
-								"transition-all duration-200 ease-in-out"
-							)}
-						>
-							{tabLists.map(({ label, value }) => (
-								<NavLink
-									key={value}
-									to={`/${value}`}
-									className={({ isActive }) =>
-										cn(
-											"cursor-pointer rounded-2xl px-6 py-2.5 text-base font-medium",
-											"transition-all duration-300 ease-out",
-											isActive
-												? "text-primary bg-white shadow-[0_14px_20px_rgba(0,0,0,0.05)]"
-												: "hover:text-primary text-text-primary"
-										)
-									}
-								>
-									{label}
-								</NavLink>
-							))}
-						</nav>
+						<Categories />
+
+						{/* Dropdown filter */}
 						<button
 							className={cn(
 								"flex cursor-pointer items-center gap-[10px]",

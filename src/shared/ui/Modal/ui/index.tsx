@@ -1,21 +1,27 @@
 import { BackdropLayout } from "./BackdropLayout";
-import { useModal } from "../model/useModal";
 import { cn } from "@/shared/utils/cn.ts";
 import { type FC, useEffect, useRef } from "react";
 import type { ModalProps } from "../model/types";
 import { Button } from "@/shared/ui/Button";
 import { X } from "lucide-react";
+import { useModal } from "@/shared/ui/Modal";
 
-export const Modal: FC<ModalProps> = ({ children, className, closeOnEsc }) => {
+export const Modal: FC<ModalProps> = ({
+	children,
+	className,
+	closeOnEsc,
+	id,
+}) => {
 	const ref = useRef<HTMLDivElement | null>(null);
-	const isOpen = useModal((state) => state.isOpen);
-	const close = useModal((state) => state.close);
+
+	const isOpen = useModal((s) => s.registry[id]);
+	const close = useModal((s) => s.close);
 
 	/* Click outside */
 	useEffect(() => {
 		const outsideClick = (event: MouseEvent | TouchEvent) => {
 			if (ref.current && !ref.current.contains(event.target as Node)) {
-				close();
+				close(id);
 			}
 		};
 
@@ -32,7 +38,7 @@ export const Modal: FC<ModalProps> = ({ children, className, closeOnEsc }) => {
 	useEffect(() => {
 		if (!isOpen || !closeOnEsc) return;
 		const onKeyDown = (e: KeyboardEvent) => {
-			if (e.key === "Escape") close();
+			if (e.key === "Escape") close(id);
 		};
 		window.addEventListener("keydown", onKeyDown, { passive: true });
 		return () => window.removeEventListener("keydown", onKeyDown);
@@ -60,7 +66,7 @@ export const Modal: FC<ModalProps> = ({ children, className, closeOnEsc }) => {
 					color={"secondary"}
 					aria-label={"Close modal button"}
 					className={"absolute top-2 right-2 bg-transparent"}
-					onClick={close}
+					onClick={() => close(id)}
 				>
 					<X />
 				</Button>

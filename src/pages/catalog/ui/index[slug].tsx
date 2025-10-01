@@ -1,13 +1,14 @@
 import { useParams } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { CategoryFilter } from "@/widgets/category-filter";
 import { ProductCard } from "@/widgets/product-card";
 import { PageLayout } from "@/shared/layouts/PageLayout.tsx";
 import { ProductConfiguratorModal } from "@/widgets/product-configurator-modal";
 import { Pagination } from "@/features/product/pagination";
+import { useModal } from "@/shared/ui/Modal";
 
 export const CatalogPageSlug = () => {
-	const [showConfigurator, setShowConfigurator] = useState<boolean>(false);
+	const open = useModal((state) => state.open);
 	const { slug } = useParams();
 	const category = slug ?? "all";
 
@@ -24,11 +25,11 @@ export const CatalogPageSlug = () => {
 				</div>
 
 				{/* Configurator modal */}
-				{showConfigurator && (
-					<ProductConfiguratorModal
-						onClick={() => setShowConfigurator(false)}
-					/>
-				)}
+				<ProductConfiguratorModal />
+
+				<button onClick={() => open("product-configurator-modal")}>
+					open
+				</button>
 
 				{/* Pagination */}
 				<Pagination visiblePages={3} totalPages={10} />

@@ -1,8 +1,10 @@
 import { create } from "zustand";
-import type { ModalActionsProps } from "../model/types";
+import type { ModalState } from "../model/types";
+import { closeModal, openModal } from "@/shared/ui/Modal/model/actions.ts";
 
-export const useModal = create<ModalActionsProps>((set) => ({
-	isOpen: false,
-	close: () => set({ isOpen: false }),
-	open: () => set({ isOpen: true }),
+export const useModal = create<ModalState>((set) => ({
+	registry: {},
+
+	open: openModal(set),
+	close: closeModal(set),
 }));
